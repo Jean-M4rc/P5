@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('avatar_path');
             $table->integer('admin')->default(0);
-            $tbale->integer('ban')->default(0);
+            $table->integer('ban')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });
