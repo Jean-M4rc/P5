@@ -19,6 +19,7 @@ La partie back-end sera réalisée par le framework Laravel 5.6, le front-end se
 * L'utilisateur doit voir apparaitre un itinéraire routier lorsqu'il choisi un point de vente, l'itinéraire routier doit rester simple et proposer le trajet le plus court jusqu'au point de vente
 * L'itinéraire doit se mettre à jour au clique sur un bouton ou toutes les minutes avec une requête mobile
 * L'itinéraire doit etre imprimable
+* Envoi de mail pour valider les adresses mails, en cas de nouveau follower et en cas de nouveau commentaire
 
 ## Technos utilisées
 
