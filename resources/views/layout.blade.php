@@ -16,6 +16,8 @@
     <body>
         @include('partials\navbar')
 
+        <!-- inclure les alertes -->
+
         
             
             @yield('contenu')

@@ -6,18 +6,13 @@
     
     <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="{{ env('APP_URL') }}">Accueil <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-            </li>
             <li class="nav-item">
                 <a class="nav-link" href="/about">A propos</a>
             </li>
         </ul>
+        <div class="btngroup">
+            <a href="/connexion"><button class="btn">Connexion</button></a>
+            <a href="/inscription"><button class="btn">Inscription</button></a>
+        </div>
     </div>
 </nav>

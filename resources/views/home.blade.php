@@ -2,19 +2,24 @@
 
 @section('contenu')
     
-    <h1 class="text-center">Iticourt</h1>
-    <h2 class="text-center">L'itinéraire des circuit courts !</h2>
+    <h1 class="display-6 text-center mt-2">Iticourt</h1>
+    <p class="lead text-center container">L'itinéraire des circuits courts !</h2>
 
-    <div class="flex-center position-ref full-height"> 
-        <div>
-                <i class="fas fa-shopping-basket"></i>
-                Vous achetez !
-        </div>
+    <div class="flex-center row">
+
+            <div id="buybtn1" class="flex-column flex-center col-12 col-sm-6" style="height:180px">
+                <i class="fas fa-shopping-basket fa-4x "></i>
+                <p class="lead text-center">Vous achetez !</p>
+            </div>
+              
+            <a href="/connexion">
+            <div id="sellbtn1" class="flex-column flex-center col-12 col-sm-6" style="height:180px">
+                    <i class="fas fa-home fa-4x"></i>
+                    <p class="lead text-center">Vous vendez !</p>
+            </div>
+            </a>
             
-        <div>
-            <i class="fas fa-home"></i>
-            Vous vendez !
-        </div>
-          
+             
     </div>
+
 @endsection
