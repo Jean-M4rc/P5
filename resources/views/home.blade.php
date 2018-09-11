@@ -4,21 +4,27 @@
     
     <h1 class="display-6 text-center mt-2">Iticourt</h1>
     <p class="lead text-center container">L'itinéraire des circuits courts !</h2>
+    <hr>
 
-    <div class="flex-center row">
+    <div class="row d-none d-md-block mt-5"><!-- partie display:none en vue smartphone -->
+        <p class="lead text-center flex-center" style="height:150px">Que voulez-vous faire ?</p>        
+    </div>
 
-            <div id="buybtn1" class="flex-column flex-center col-12 col-sm-6" style="height:180px">
-                <i class="fas fa-shopping-basket fa-4x "></i>
-                <p class="lead text-center">Vous achetez !</p>
+    <div class="row"><!-- partie à gérer en vuejs pour animer la succession de bouton -->
+
+            <div class="col-12 col-md-6 flex-column flex-center" style="height:160px">
+                <a id="buybtn1" href="">
+                    <i class="fas fa-shopping-basket fa-4x flex-center"></i>
+                    <p class="lead text-center">Vous achetez !</p>
+                </a>
             </div>
-              
-            <a href="/connexion">
-            <div id="sellbtn1" class="flex-column flex-center col-12 col-sm-6" style="height:180px">
-                    <i class="fas fa-home fa-4x"></i>
-                    <p class="lead text-center">Vous vendez !</p>
-            </div>
-            </a>
             
+            <div id="sellbtn1" class="col-12 col-md-6 flex-column flex-center " style="height:160px">
+                    <a class="links" href="/connexion">
+                        <i class="fas fa-home fa-4x flex-center"></i>
+                        <p class="lead ">Vous vendez !</p>
+                    </a>
+            </div>
              
     </div>
 

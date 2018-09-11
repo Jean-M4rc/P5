@@ -11,8 +11,8 @@
             </li>
         </ul>
         <div class="btngroup">
-            <a href="/connexion"><button class="btn">Connexion</button></a>
             <a href="/inscription"><button class="btn">Inscription</button></a>
+            <a href="/connexion"><button class="btn">Connexion</button></a>
         </div>
     </div>
 </nav>
