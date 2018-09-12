@@ -2,18 +2,25 @@
 
 @section('contenu')
 
-    <form action="nouvelleInscription.php" method="post" class="container mb-5">
+    <form action="/nouvelleInscription" method="post" class="container mb-5">
+        @csrf
         <fieldset><!-- Formulaire utilisateur commun -->
             <legend class="mt-2 text-center">Inscription à Iticourt</legend>            
             <div class="form-group"><!-- mail -->
                 <label>Adresse mail <span style="color:red">*</span></label>
                 <input class="form-control" name="email" aria-describedby="emailHelp" placeholder="Email" type="email" required>
                 <small id="emailHelp" class="form-text text-muted">Nous ne transmettrons jamais votre email à un tiers.</small>
+                @if ($errors->has('email'))
+                    <p class="form-text text-danger"> {{ $errors->first('email') }}</p>
+                @endif
             </div>
             <div class="form-group"><!-- prénom -->
                 <label>Prénom / Pseudo <span style="color:red">*</span></label>
                 <input class="form-control" name="nickname" placeholder="Prénom" type="text" required>
                 <small id="nicknameHelp" class="form-text text-muted">Minimum 4 caractères.</small>
+                @if ($errors->has('nickname'))
+                    <p class="form-text text-danger"> {{ $errors->first('nickname') }}</p>
+                @endif
             </div>
             <div class="form-group"><!-- nom -->
                 <label>Nom</label>
@@ -22,10 +29,17 @@
             <div class="form-group"><!-- passwd -->
                 <label for="InputPassword1">Mot de passe <span style="color:red">*</span></label>
                 <input class="form-control" id="InputPassword1" name="password" placeholder="Mot de passe" type="password" required>
+                <small id="passwordHelp" class="form-text text-muted">Minimum 8 caractères.</small>
+                @if ($errors->has('password'))
+                    <p class="form-text text-danger"> {{ $errors->first('password') }}</p>
+                @endif
             </div>
             <div class="form-group"><!-- passwd_confirmation -->
                 <label for="InputPassword2">Confirmer votre mot de passe <span style="color:red">*</span></label>
                 <input class="form-control" id="InputPassword2" name="password_confirmation" placeholder="Mot de passe" type="password" required>
+                @if ($errors->has('password_confirmation'))
+                    <p class="form-text text-danger"> {{ $errors->first('password_confirmation') }}</p>
+                @endif
             </div>
             <small class="form-text text-muted"><span style="color:red">*</span> : Champs requis.</small><br/>
             <button type="submit" class="btn btn-primary btn-lg btn-block">M'inscrire</button>
