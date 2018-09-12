@@ -3,7 +3,7 @@
 @section('contenu')
     
     <h1 class="display-6 text-center mt-2">Iticourt</h1>
-    <p class="lead text-center container">L'itinéraire des circuits courts !</h2>
+    <p class="lead text-center container">L'itinéraire des circuits courts</h2>
     <hr>
 
     <div class="row d-none d-md-block mt-5"><!-- partie display:none en vue smartphone -->
