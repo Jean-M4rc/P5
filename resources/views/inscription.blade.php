@@ -2,7 +2,7 @@
 
 @section('contenu')
 
-    <form action="nouvelleInscription.php" method="post" class="container">
+    <form action="nouvelleInscription.php" method="post" class="container mb-5">
         <fieldset><!-- Formulaire utilisateur commun -->
             <legend class="mt-2">Inscription à Iticourt</legend>            
             <div class="form-group"><!-- mail -->
@@ -125,12 +125,10 @@
                         <label class="custom-file-label" for="InputFile4">Photo alternative 3 :</label>
                     </div>
                     <small id="fileHelp" class="form-text text-muted">Ajouter des photos de vos produits.</small>
-                </div>                   
-                
+                </div>
+                <button type="submit" class="btn btn-primary">M'inscrire</button>
             </div>
         </fieldset>
-            
-
     </form>
 
 @endsection
