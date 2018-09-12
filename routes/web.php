@@ -11,41 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::view('/', 'home');
 
-Route::get('/about', function () {
-    return view('about');
-});
+Route::view('/about','about');
 
-Route::get('/inscription', function () {
-    return view('inscription');
-});
+Route::get('/inscription', 'InscriptionController@formulaire');
 
-Route::post('/nouvelleInscription', function () {
-
-    request()->validate([
-        'email' => ['required', 'email'],
-        'nickname' => ['required', 'string','min:4'],
-        'firstname' => ['string'],
-        'password' => ['required', 'min:8', 'confirmed'],
-        'password_confirmation' => ['required'],
-
-    ]);
-    
-    $user = App\User::create([
-        'email' => request('email'),
-        'nickname' => request('nickname'),
-        'firstname' => request('firstname'),
-        'password' => bcrypt(request('password')),
-    ]);
-
-    if ('seller_confirmation'=="1"){
-        // Validation des champs de vendeurs et création du vendeur
-        return "la case est cochée";
-    } else {
-        return "ce n'est pas un vendeur";
-    }
-
-});
+Route::post('/inscription', 'InscriptionController@traitement');
