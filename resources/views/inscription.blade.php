@@ -95,11 +95,13 @@
                         <label class="custom-control-label" for="product_category8">Autres</label>
                     </div>
                 </div>
-                <div class="form-group row container"><!-- Récupération de la position GPS du point de vente -->
+                <div class="form-group row"><!-- Récupération de la position GPS du point de vente -->
                     <label aria-describedby="gpsHelp" class="col-12">Vos coordonnées GPS<small id="gpsHelp" class="form-text text-muted">Indiquez les coordonnées GPS de votre point de vente, ou de l'entrée de votre propriété sur la voie publique</small></label>
-                    <input class="form-control col-sm-5 mb-1" id="longInput" name="long" placeholder="Longitude (49.3154287)" type="text">
-                    <input class="form-control col-sm-5 offset-sm-2 mb-1" id="latInput" name="lat" placeholder="Latitude (-0.875458754)" type="text">
-                    <button type="button" class="btn btn-primary container">Récupérer automatiquement<br/> ses coordonnées</button>   
+                    <div class="form-group container">
+                        <input class="form-control mb-1" id="longInput" name="long" placeholder="Longitude ex : 49.3154287" type="text">
+                        <input class="form-control mb-1" id="latInput" name="lat" placeholder="Latitude ex : -0.875458754" type="text">
+                        <button type="button" class="btn btn-primary container">Récupérer automatiquement<br/> ses coordonnées</button>  
+                    </div>
                 </div>
                 <div class="form-group"><!-- Présentation de la structure -->
                     <label>Présentation de votre production<small class="form-text text-muted">Décrivez briévement les produits que vous souhaitez vendre.</small></label>
