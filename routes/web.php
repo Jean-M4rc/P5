@@ -20,3 +20,9 @@ Route::get('/inscription', 'InscriptionController@formulaire');
 Route::post('/inscriptionVendeur', 'InscriptionController@traitementVendeur');
 
 Route::post('/inscriptionAcheteur', 'InscriptionController@traitementAcheteur');
+
+Route::post('/connexion', 'ConnexionController@traitement');
+
+Route::get('/profil', 'CompteController@accueil');
+
+Route::get('/deconnexion', 'CompteController@deconnexion');

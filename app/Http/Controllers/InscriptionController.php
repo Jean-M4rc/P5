@@ -47,6 +47,13 @@ class InscriptionController extends Controller
 
         ]);
 
+        auth()->attempt([
+            'email'=> request('email'),
+            'password' => request('password'),
+        ]);
+
+        flash("Vous êtes bien inscrit")->success();
+
         return redirect('/');
 
     }
@@ -121,6 +128,13 @@ class InscriptionController extends Controller
 
         // On attache le vendeur à ses categories
         $seller->seller_category()->attach($category_followed);
+
+        auth()->attempt([
+            'email'=> request('email'),
+            'password' => request('password'),
+        ]);
+
+        flash("Vous êtes bien inscrit")->success();
 
         return redirect('/');
 
