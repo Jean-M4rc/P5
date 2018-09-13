@@ -17,4 +17,6 @@ Route::view('/about','about');
 
 Route::get('/inscription', 'InscriptionController@formulaire');
 
-Route::post('/inscription', 'InscriptionController@traitement');
+Route::post('/inscriptionVendeur', 'InscriptionController@traitement');
+
+Route::post('/inscriptionAcheteur', 'InscriptionController@traitement');
