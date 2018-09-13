@@ -64,7 +64,7 @@ class InscriptionController extends Controller
             'businessName'=>['required'],
             'phone'=>['required'],
             'address'=>['required'],
-            'product_category'=>['required'],
+            'product_category'=>['required','array'],
             'lat'=>['required','numeric', 'between:-90,90'],
             'long'=>['required','numeric', 'between:-180,180'],
             'teaserSeller'=>['required'],
@@ -85,24 +85,25 @@ class InscriptionController extends Controller
         ]);
 
         // Traitement des images
-        $path1 = request('avatar')->store('sellersAvatar','public/sellerAvatars');
 
-        // Champs non requis - définition varibales nulles.
+        // Image principale requise
+        $path1 = request('avatar')->store('sellersAvatar','public');
+
+        // Champs non requis - définition variables nulles.
         $path2 ='';
         $path3 ='';
 
         if(request('avatar1')){
-            $path2 = request('avatar1')->store('sellersAvatar','public/sellerAvatars');
+            $path2 = request('avatar1')->store('sellersAvatar','public');
         }
         
         if (request('avatar2')){
-            $path3 = request('avatar2')->store('sellersAvatar','public/sellerAvatars');
+            $path3 = request('avatar2')->store('sellersAvatar','public');
         }
-        
 
-        $seller = Seller::create([
+        // On défini le vendeur par l'user et la relation user->seller()
+        $seller = $user->seller()->create([
 
-            'user_id'=> $user->id,
             'longitude' => request('long'),
             'latitude' => request('lat'),
             'avatar1_path' => $path1,
@@ -112,8 +113,16 @@ class InscriptionController extends Controller
             'business_name' => request('businessName'),
             'phone' => request('phone'),
             'address' => request('address'),
+
         ]);
 
+        // On attribut le tableau des catégories du vendeur à la variable $category_followed
+        $category_followed = request('product_category');
+
+        // On attache le vendeur à ses categories
+        $seller->seller_category()->attach($category_followed);
+
         return redirect('/');
+
     }
 }

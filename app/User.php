@@ -18,7 +18,7 @@ class User extends Authenticatable
     protected $fillable = [
 
         'firstname','nickname','email','password','avatar_path',
-        
+
     ];
 
     /**
@@ -29,4 +29,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function seller()
+    {
+        return $this->hasOne('App\Seller');
+    }
 }

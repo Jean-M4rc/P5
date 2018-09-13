@@ -52,42 +52,42 @@
             <label aria-describedby="categoriesHelp" class="col-12">Vos catégories de produits <span style="color:red">*</span><small id="categoriesHelp" class="form-text text-muted">Vous pouvez sélectionner plusieurs catégories et vous devez en sélectionner au moins une.</small></label>
 
             <div class="custom-control custom-checkbox col-12 col-sm-6 col-md-3">
-                <input class="custom-control-input" id="product_category1" type="checkbox" name="product_category" value="1">
+                <input class="custom-control-input" id="product_category1" type="checkbox" name="product_category[]" value="1">
                 <label class="custom-control-label" for="product_category1">Fruits & Légumes</label>
             </div>
 
             <div class="custom-control custom-checkbox col-12 col-sm-6 col-md-3">
-                <input class="custom-control-input" id="product_category2" type="checkbox" name="product_category" value="2">
+                <input class="custom-control-input" id="product_category2" type="checkbox" name="product_category[]" value="2">
                 <label class="custom-control-label" for="product_category2">Volailles</label>
             </div>
 
             <div class="custom-control custom-checkbox col-12 col-sm-6 col-md-3">
-                <input class="custom-control-input" id="product_category3" type="checkbox" name="product_category" value="3">
+                <input class="custom-control-input" id="product_category3" type="checkbox" name="product_category[]" value="3">
                 <label class="custom-control-label" for="product_category3">Oeufs</label>
             </div>
 
             <div class="custom-control custom-checkbox col-12 col-sm-6 col-md-3">
-                <input class="custom-control-input" id="product_category4" type="checkbox" name="product_category" value="4">
+                <input class="custom-control-input" id="product_category4" type="checkbox" name="product_category[]" value="4">
                 <label class="custom-control-label" for="product_category4">Laits & Fromages</label>
             </div>
 
             <div class="custom-control custom-checkbox col-12 col-sm-6 col-md-3">
-                <input class="custom-control-input" id="product_category5" type="checkbox" name="product_category" value="5">
+                <input class="custom-control-input" id="product_category5" type="checkbox" name="product_category[]" value="5">
                 <label class="custom-control-label" for="product_category5">Charcuterie</label>
             </div>
 
             <div class="custom-control custom-checkbox col-12 col-sm-6 col-md-3">
-                <input class="custom-control-input" id="product_category6" type="checkbox" name="product_category" value="6">
+                <input class="custom-control-input" id="product_category6" type="checkbox" name="product_category[]" value="6">
                 <label class="custom-control-label" for="product_category6">Boucherie</label>
             </div>
 
             <div class="custom-control custom-checkbox col-12 col-sm-6 col-md-3">
-                <input class="custom-control-input" id="product_category7" type="checkbox" name="product_category" value="7">
+                <input class="custom-control-input" id="product_category7" type="checkbox" name="product_category[]" value="7">
                 <label class="custom-control-label" for="product_category7">Textiles</label>
             </div>
 
             <div class="custom-control custom-checkbox col-12 col-sm-6 col-md-3">
-                <input class="custom-control-input" id="product_category8" type="checkbox" name="product_category" value="8">
+                <input class="custom-control-input" id="product_category8" type="checkbox" name="product_category[]" value="8">
                 <label class="custom-control-label" for="product_category8">Autres</label>
             </div>
 
