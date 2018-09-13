@@ -85,18 +85,18 @@ class InscriptionController extends Controller
         ]);
 
         // Traitement des images
-        $path1 = request('avatar')->store('sellersAvatar');
+        $path1 = request('avatar')->store('sellersAvatar','public/sellerAvatars');
 
         // Champs non requis - définition varibales nulles.
         $path2 ='';
         $path3 ='';
 
         if(request('avatar1')){
-            $path2 = request('avatar1')->store('sellersAvatar');
+            $path2 = request('avatar1')->store('sellersAvatar','public/sellerAvatars');
         }
         
         if (request('avatar2')){
-            $path3 = request('avatar2')->store('sellersAvatar');
+            $path3 = request('avatar2')->store('sellersAvatar','public/sellerAvatars');
         }
         
 
