@@ -63,17 +63,17 @@
                         </div>
 
                         <!-- cookiebox -->
-                        <div class="alert alert-primary">
-                            <h4 class="alert-heading">Attention</h4>
+                        
                             <div class="form-group">
-                                <div class="form-check checkbox">
-                                    <label class="from-check-label">
-                                        <input type="checkbox" class="form-check-input" id="ca" value="1" name="CA">
-                                    Se souvenir de moi.
-                                    </label>
+                                <div class="custom-control custom-checkbox">
+                                        <input class="custom-control-input" id="customCheck1" name="CA" value="1" type="checkbox">
+                                        <label class="custom-control-label" for="customCheck1">Se souvenir de moi.</label>
                                 </div>
-                                <p class="mb-0">Cocher l'option "Se souvenir de moi" permettra de mémoriser des cookies pour améliorer votre expérience. Si vous voulez supprimer ces cookies cliquez sur le bouton "Déconnexion".</p>	
                             </div>
+
+                        <!-- signInInfo -->
+                        <div class="alert alert-info">
+                            <p>Si vous n'êtes pas encore inscrit sur Iticourt, <a class="link" href="/inscription">"Je m'inscris !"</a></p>
                         </div>
                     </div>
                     <div class="modal-footer">

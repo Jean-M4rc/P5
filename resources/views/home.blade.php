@@ -20,7 +20,7 @@
             </div>
             
             <div id="sellbtn1" class="col-12 col-md-6 flex-column flex-center " style="height:160px">
-                    <a class="links" href="/connexion">
+                    <a class="links" href="#logInModal" data-toggle="modal" data-target="#logInModal" >
                         <i class="fas fa-home fa-4x flex-center"></i>
                         <p class="lead ">Vous vendez !</p>
                     </a>
