@@ -10,7 +10,7 @@
 
         <div class="form-group"><!-- Nom de la structure -->
 
-            <label class="col-form-label" for="inputBusinessName">Le nom de votre structure <span style="color:#772953">*</span></label>
+            <label class="col-form-label" for="inputBusinessName">Le nom de votre structure <span style="color:red">*</span></label>
             <input class="form-control" placeholder="Les volailles de Roseline..." id="inputBusinessName" type="text" name="businessName" required>
             <small id="businessNameHelp" class="form-text text-muted">Minimum 6 caractères.</small>
 
@@ -103,13 +103,13 @@
 
             <div class="form-group container">
 
-                <input class="form-control mb-1" id="longInput" name="long" placeholder="Longitude ex : 49.3154287" type="number" required>
+                <input class="form-control mb-1" id="longInput" name="long" placeholder="Longitude ex : 49.3154287" type="text" required>
 
                 @if ($errors->has('long'))
                     <p class="form-text text-danger"> {{ $errors->first('long') }}</p>
                 @endif
 
-                <input class="form-control mb-1" id="latInput" name="lat" placeholder="Latitude ex : -0.875458754" type="number" required>
+                <input class="form-control mb-1" id="latInput" name="lat" placeholder="Latitude ex : -0.875458754" type="text" required>
 
                 @if ($errors->has('lat'))
                     <p class="form-text text-danger"> {{ $errors->first('lat') }}</p>
@@ -175,18 +175,6 @@
 
             </div>
 
-            <div class="custom-file">
-
-                <input class="custom-file-input" id="InputFile4" type="file" aria-describedby="fileHelp" name="avatar3">
-
-                <label class="custom-file-label" for="InputFile4">Photo alternative 3 :</label>
-
-                @if ($errors->has('avatar3'))
-                    <p class="form-text text-danger"> {{ $errors->first('avatar3') }}</p>
-                @endif
-
-            </div>
-
             <small id="fileHelp" class="form-text text-muted">Ajouter des photos de vos produits.</small>
         </div>
             
@@ -206,7 +194,7 @@
 
         <div class="alert alert-warning text-center">Attention si <strong class="text-danger">"Je confirme être un vendeur"</strong> n'est pas cochée vos informations de vendeur ne seront pas enregistrées et vous serez ne serez pas inscrit.</div>
             
-        <button type="submit" class="btn btn-primary btn-lg btn-block">M'inscrire en <span class="d-inline d-sm-none"><br></span>tant que vendeur</button>
+        <button type="submit" class="btn btn-dark btn-lg btn-block">M'inscrire en <span class="d-inline d-sm-none"><br></span>tant que vendeur</button>
         
     </fieldset>
     

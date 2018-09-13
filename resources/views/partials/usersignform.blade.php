@@ -37,7 +37,7 @@
 
     <label for="InputPassword1">Mot de passe <span style="color:red">*</span></label>
     <input class="form-control" id="InputPassword1" name="password" placeholder="Mot de passe" type="password" required>
-    <small id="passwordHelp" class="form-text text-muted">Minimum 8 caractères.</small>
+    <small id="passwordHelp" class="form-text text-muted">Minimum 6 caractères.</small>
 
     @if ($errors->has('password'))
         <p class="form-text text-danger"> {{ $errors->first('password') }}</p>
