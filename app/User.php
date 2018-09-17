@@ -30,6 +30,13 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    protected $dates = [
+        'created_at'=> 'datetime:d-m-Y',
+        'updated_at',
+        'deleted_at'
+    ];
+
+
     public function seller()
     {
         return $this->hasOne('App\Seller');
