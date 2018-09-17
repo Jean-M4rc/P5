@@ -16,8 +16,6 @@ class CompteController extends Controller
 
         }
 
-        flash("Vous êtes bien connecté.")->success();
-
         return view('profil');
     }
 

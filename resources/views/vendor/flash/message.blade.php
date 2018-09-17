@@ -6,22 +6,20 @@
             'body'       => $message['message']
         ])
     @else
-        <div class="divalert alert
+        <div class="alert text-center
                     alert-{{ $message['level'] }}
-                    {{ $message['important'] ? 'alert-important' : '' }} text-center"
+                    {{ $message['important'] ? 'alert-important' : '' }}"
                     role="alert"
         >
-            @if ($message['important'])
                 <button type="button"
                         class="close"
                         data-dismiss="alert"
                         aria-hidden="true"
                 >&times;</button>
-            @endif
-
+         
             {!! $message['message'] !!}
         </div>
-    @endif
+@endif
 @endforeach
 
 {{ session()->forget('flash_notification') }}

@@ -21,7 +21,9 @@ class ConnexionController extends Controller
 
         if($resultat){
 
-            return redirect('/profil');
+            flash("Vous êtes bien connecté.")->success();
+
+            return redirect('/');
         
         } else {
 
