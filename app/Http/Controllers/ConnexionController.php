@@ -3,10 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ConnexionController extends Controller
 {
 
+    /**
+     * Traitement du formulaire de connexion
+     *
+     * @return void
+     */
     public function traitement()
     {
         request()->validate([
@@ -14,20 +20,21 @@ class ConnexionController extends Controller
             'password' => ['required', 'min:6'],
         ]);
 
-        /*
-         request('remember') est la case à cochée "Se souvenir de moi"
-         $remember = request('remember');
+        // TODO Gérer la mise en place de token RememberMe
+        
+        $remember = request('remember');
 
-         if($remember == null){
+        if(!isset($remember)){
+
             $remember = false;
-         }
-        */
 
+        }
 
         $resultat = auth()->attempt([
             'email'=> request('email'),
             'password' => request('password'),
-        ]);
+            'ban' => 0,
+        ], $remember);
 
         if($resultat){
 
@@ -37,7 +44,7 @@ class ConnexionController extends Controller
         
         } else {
 
-            flash()->overlay('Vos identifiants sont incorrects !', 'Attention')->error();
+            flash()->overlay('Echec de la connexion !', 'Attention')->error();
 
             return redirect('/');
         }

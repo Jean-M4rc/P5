@@ -22,4 +22,36 @@ class RootController extends Controller
             'commentaires' => $comments,
         ]);
     }
+
+    public function bannissement()
+    {
+        request()->validate([
+            'userId' => ['required'],
+        ]);
+
+        $userId = request('userId');
+
+        $utilisateuràbannir = User::where('id',$userId)->first();
+
+
+        if($utilisateuràbannir->ban === 1){
+
+            $utilisateuràbannir->update([
+                'ban' => 0,
+            ]);
+
+        } else {
+
+            $utilisateuràbannir->update([
+            'ban' => 1,
+            ]);
+
+        }
+        
+
+        return back();
+
+
+
+    }
 }

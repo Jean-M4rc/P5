@@ -50,7 +50,13 @@
                         <form action="/banUser" method="post">
                         @csrf
                         <input type="hidden" name="userId" value="{{ $utilisateur->id }}">
-                        <button type="submit" class="btn btn-dark">Bannir</button>
+                        <button type="submit" class="btn btn-dark">
+                            @if ($utilisateur->ban === 0)
+                                Bannir
+                            @else
+                                Débannir
+                            @endif
+                        </button>
                         </form>
                         
                     </div>

@@ -25,6 +25,8 @@ Route::post('/connexion', 'ConnexionController@traitement');
 
 Route::get('/rootme', 'RootController@administration');
 
+Route::post('/banUser', 'RootController@bannissement');
+
 Route::get('/profil', 'CompteController@accueil');
 
 Route::get('/deconnexion', 'CompteController@deconnexion');
