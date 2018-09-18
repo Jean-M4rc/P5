@@ -27,6 +27,8 @@ Route::get('/rootme', 'RootController@administration');
 
 Route::post('/banUser', 'RootController@bannissement');
 
+Route::post('/resetSellerAvatar', 'RootController@resetAvatar');
+
 Route::get('/profil', 'CompteController@accueil');
 
 Route::get('/deconnexion', 'CompteController@deconnexion');

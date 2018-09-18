@@ -22,5 +22,8 @@ class Seller extends User
         return $this->belongsToMany(Category::class, 'sellers_categories', 'seller_follower_id', 'category_followed_id');
     }
 
-
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

@@ -10,19 +10,27 @@ use App\Seller;
 
 class RootController extends Controller
 {
+
+    /**
+     * Accède au portail d'administration
+     *
+     * @return void
+     */
     public function administration()
     {
-        $users = User::all()->where('admin','0');
-        $sellers = Seller::all();
-        $comments = Comment::all();
 
         return view('root', [
-            'utilisateurs' => $users,
-            'point_de_ventes' => $sellers,
-            'commentaires' => $comments,
+            'utilisateurs' => User::where('admin','0')->get()->load('seller'),
+            'pdvs' => Seller::with('seller_category')->get()->load('user'),
+            'commentaires' => Comment::with('seller')->get()->load('user'),
         ]);
     }
 
+    /**
+     * Banni un utilisateur
+     *
+     * @return void
+     */
     public function bannissement()
     {
         request()->validate([
@@ -53,5 +61,38 @@ class RootController extends Controller
 
 
 
+    }
+
+    public function resetAvatar()
+    {
+        request()->validate([
+            'userId' => ['required'],
+            'avatarSellers' => ['required']
+        ]);
+        
+        
+
+        $sellerId = request('userId');
+
+        //On a validé l'envoi des données, on a au moins un choix et l'id
+
+        $sellerModerate = Seller::where('id', $sellerId);
+
+        $avatarSellers = request('avatarSellers');
+
+        foreach ($avatarSellers as $key => $avatarSeller) {
+
+            $index = $key + 1 ;
+            
+            $sellerModerate->update([
+
+                'avatar'. $index .'_path' => 'sellersAvatar/avatarSellerDefault.jpg',
+                
+            ]);
+        }
+
+        flash('Les photos sont modérées')->success();
+
+        return back();
     }
 }

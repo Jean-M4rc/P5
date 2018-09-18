@@ -40,6 +40,10 @@
                         <p class="text-primary">Inscrit le {{ $utilisateur->created_at->format('d/m/Y à H:i:s') }}</p>
                         <p class="text-dark">Rôle : {{ $utilisateur->seller ? 'Vendeur' : 'Acheteur'}}</p>
                         <p class="text-primary">Nombre de commentaires postés : {{ count($utilisateur->comments) }}</p>
+                        <div>
+                            <p class="text-dark"> Image de profil :</p>
+                            <img src="{{ $utilisateur->avatar_path }}"/>
+                        </div>
                         @if ($utilisateur->seller)
                         <p>Lien vers la fiche du point de vente : <a href="#"></a></p>                            
                         @endif
