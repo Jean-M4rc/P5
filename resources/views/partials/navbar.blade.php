@@ -95,7 +95,7 @@
                         
                             <div class="form-group">
                                 <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" id="customCheck1" name="CA" value="1" type="checkbox">
+                                        <input class="custom-control-input" id="customCheck1" name="remember" value="true" type="checkbox">
                                         <label class="custom-control-label" for="customCheck1">Se souvenir de moi.</label>
                                 </div>
                             </div>

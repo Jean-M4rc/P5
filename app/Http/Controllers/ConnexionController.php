@@ -14,7 +14,17 @@ class ConnexionController extends Controller
             'password' => ['required', 'min:6'],
         ]);
 
-        $resultat =auth()->attempt([
+        /*
+         request('remember') est la case à cochée "Se souvenir de moi"
+         $remember = request('remember');
+
+         if($remember == null){
+            $remember = false;
+         }
+        */
+
+
+        $resultat = auth()->attempt([
             'email'=> request('email'),
             'password' => request('password'),
         ]);
