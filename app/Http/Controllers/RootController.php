@@ -56,13 +56,16 @@ class RootController extends Controller
 
         }
         
-
         return back();
-
-
 
     }
 
+    /**
+     * Réinitialise l'avatar du point de vente
+     * En fonction des photos sélectionnées
+     *
+     * @return void
+     */
     public function resetAvatar()
     {
         request()->validate([
@@ -70,8 +73,6 @@ class RootController extends Controller
             'avatarSellers' => ['required']
         ]);
         
-        
-
         $sellerId = request('userId');
 
         //On a validé l'envoi des données, on a au moins un choix et l'id
@@ -80,18 +81,35 @@ class RootController extends Controller
 
         $avatarSellers = request('avatarSellers');
 
-        foreach ($avatarSellers as $key => $avatarSeller) {
+            foreach ($avatarSellers as $key => $avatarSeller) {
 
-            $index = $key + 1 ;
-            
-            $sellerModerate->update([
+                $sellerModerate->update([
 
-                'avatar'. $index .'_path' => 'sellersAvatar/avatarSellerDefault.jpg',
-                
-            ]);
-        }
+                    'avatar'. $avatarSeller .'_path' => 'sellersAvatar/avatarSellerDefault.jpg',
+                    
+                ]);
+            }
 
         flash('Les photos sont modérées')->success();
+
+        return back();
+    }
+
+    public function deleteSeller()
+    {
+        request()->validate([
+            'seller_id' => ['required'],
+        ]);
+
+        // TODO refaire table avec clé étrangère pour les relations en cascades
+        
+        $seller = Seller::where('id', request('seller_id'))->get();
+
+        dd($seller->user_id->get());
+
+        dd($userSeller= Seller::with('user')->get()->where('user_id', seller()->id ));
+
+        //$seller->delete();
 
         return back();
     }

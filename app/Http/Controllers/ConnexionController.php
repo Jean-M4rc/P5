@@ -30,12 +30,13 @@ class ConnexionController extends Controller
 
         }
 
+        // Méthode non fonctionnelle, le cookie est toujours actif        
         $resultat = auth()->attempt([
             'email'=> request('email'),
             'password' => request('password'),
             'ban' => 0,
         ], $remember);
-
+        
         if($resultat){
 
             flash("Vous êtes bien connecté.")->success();
@@ -48,6 +49,33 @@ class ConnexionController extends Controller
 
             return redirect('/');
         }
+        
+        /*
+            // Issue de la doc mais non fonctionnelle non plus
+
+            if (Auth::attempt([
+
+                'email'=> request('email'),
+                'password' => request('password'),
+                'ban' => 0,
+                
+            ], $remember)) {
+
+                // Ici connecté avec le cookie
+
+                flash("Vous êtes bien connecté. Le cookie est défini")->success();
+
+                return redirect('/'); 
+
+            } else {
+
+                // Ici connecté sans cookie . pas connecté ?
+
+                flash()->overlay('Echec de la connexion !', 'Attention')->error();
+
+                return redirect('/');
+            };
+        */
 
     }
 }

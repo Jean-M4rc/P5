@@ -134,7 +134,7 @@ class InscriptionController extends Controller
             'password' => request('password'),
         ]);
 
-        flash("Vous êtes bien inscrit")->success();
+        flash("Vous êtes bien inscrit et connecté")->success();
 
         return redirect('/');
 

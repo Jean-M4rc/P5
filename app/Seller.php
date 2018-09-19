@@ -26,4 +26,14 @@ class Seller extends User
     {
         return $this->belongsTo('App\User');
     }
+
+    /**
+     * Relation qui détermine la relation entre les commentaires et la fiche vendeur
+     *
+     * @return void
+     */
+    public function comments()
+    {
+        return $this->hasMany('App\Comment')->latest();
+    }
 }
