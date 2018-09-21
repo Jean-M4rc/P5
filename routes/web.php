@@ -23,14 +23,26 @@ Route::post('/inscriptionAcheteur', 'InscriptionController@traitementAcheteur');
 
 Route::post('/connexion', 'ConnexionController@traitement');
 
-Route::get('/rootme', 'RootController@administration');
+Route::get( '/sellersList' , 'SellerListController@sellersList');
 
-Route::post('/banUser', 'RootController@bannissement');
+Route::group([
+    'middleware' => 'App\Http\Middleware\Auth'
 
-Route::post('/resetSellerAvatar', 'RootController@resetAvatar');
+    ], function () {
 
-Route::post('/deleteSeller', 'RootController@deleteSeller');
+    Route::get('/rootme', 'RootController@administration');
 
-Route::get('/profil', 'CompteController@accueil');
+    Route::post('/banUser', 'RootController@bannissement');
 
-Route::get('/deconnexion', 'CompteController@deconnexion');
+    Route::post('/resetSellerAvatar', 'RootController@resetAvatar');
+
+    Route::post('/deleteSeller', 'RootController@deleteSeller');
+
+    Route::get('/profil', 'CompteController@accueil');
+
+    Route::get('/deconnexion', 'CompteController@deconnexion'); 
+
+});
+
+
+

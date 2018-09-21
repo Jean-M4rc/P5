@@ -95,21 +95,22 @@ class RootController extends Controller
         return back();
     }
 
+    /**
+     * Supprime le vendeur et l'acheteur correspondant
+     *
+     * @return void
+     */
     public function deleteSeller()
     {
         request()->validate([
             'seller_id' => ['required'],
         ]);
-
-        // TODO refaire table avec clé étrangère pour les relations en cascades
         
-        $seller = Seller::where('id', request('seller_id'))->get();
+        $seller = Seller::where('id', request('seller_id'))->first();
 
-        dd($seller->user_id->get());
+        $seller->user()->delete();
 
-        dd($userSeller= Seller::with('user')->get()->where('user_id', seller()->id ));
-
-        //$seller->delete();
+        $seller->delete();
 
         return back();
     }

@@ -11,6 +11,9 @@
             <li class="nav-item">
                 <a class="nav-link {{ request()->is('about') ? 'active' : '' }}" href="/about">A propos</a>
             </li>
+            <li class="nav-item">
+                    <a class="nav-link {{ request()->is('about') ? 'active' : '' }}" href="/sellersList">Nos vendeurs</a>
+            </li>
 
         </ul>
 
