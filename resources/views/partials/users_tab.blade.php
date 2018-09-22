@@ -72,7 +72,7 @@
 
         @empty
 
-        <tr class="table-dark">Aucun utilisateur enregistré</tr>
+        <tr class="table-warning text-center"><td colspan="6">Aucun utilisateur enregistré</td></tr>
             
         @endforelse
          

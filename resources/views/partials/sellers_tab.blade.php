@@ -1,15 +1,15 @@
 <table class="table table-hover">
     <thead>
         <tr class="table-info fixed text-center">
-        <th class="d-none d-lg-table-cell align-middle" scope="col">Nom du vendeur</th>
-        <th class="align-middle" scope="col">Nom du point de vente</th>
-        <th class="d-none d-lg-table-cell align-middle" scope="col">Catégorie</th>
-        <th class="d-none d-lg-table-cell align-middle" scope="col">Adresse du lieu de vente</th>
-        <th class="d-none d-lg-table-cell align-middle" scope="col">Téléphone</th>
-        <th class="d-none d-sm-table-cell align-middle" scope="col">Voir sur la carte</th>
-        <th class="d-none d-sm-table-cell align-middle" scope="col">Voir les photos</th>
-        <th class="d-none d-sm-table-cell align-middle" scope="col">Supprimer</th>
-        <th scope="col" class="d-table-cell d-sm-none align-middle">Actions</th>
+            <th class="d-none d-lg-table-cell align-middle" scope="col">Nom du vendeur</th>
+            <th class="align-middle" scope="col">Nom du point de vente</th>
+            <th class="d-none d-lg-table-cell align-middle" scope="col">Catégorie</th>
+            <th class="d-none d-lg-table-cell align-middle" scope="col">Adresse du lieu de vente</th>
+            <th class="d-none d-lg-table-cell align-middle" scope="col">Téléphone</th>
+            <th class="d-none d-sm-table-cell align-middle" scope="col">Voir sur la carte</th>
+            <th class="d-none d-sm-table-cell align-middle" scope="col">Voir les photos</th>
+            <th class="d-none d-sm-table-cell align-middle" scope="col">Supprimer</th>
+            <th scope="col" class="d-table-cell d-sm-none align-middle">Actions</th>
         </tr>
     </thead>
 
@@ -56,13 +56,12 @@
             <!-- modalAvatarUser -->
             @include('partials.modals.modalAvatarSeller')
 
-
             <!-- modalInfoUser -->
             @include('partials.modals.modalDeleteSeller')
 
         @empty
 
-        <tr class="table-dark">Aucun point de vente enregistré</tr>
+            <tr class="table-warning text-center"><td colspan="8">Aucun point de vente enregistré</td></tr>
             
         @endforelse
          

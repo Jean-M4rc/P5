@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 use App\User;
 use App\Comment;
@@ -83,9 +84,12 @@ class RootController extends Controller
 
             foreach ($avatarSellers as $key => $avatarSeller) {
 
+                // Tentative de suppression des photos à la mise à jour, a refaire !
+                // Storage::delete('avatar' . $avatarSeller . '_path', 'public');
+
                 $sellerModerate->update([
 
-                    'avatar'. $avatarSeller .'_path' => 'sellersAvatar/avatarSellerDefault.jpg',
+                    'avatar' . $avatarSeller . '_path' => 'sellersAvatar/avatarSellerDefault.jpg',
                     
                 ]);
             }
@@ -108,10 +112,28 @@ class RootController extends Controller
         
         $seller = Seller::where('id', request('seller_id'))->first();
 
-        Storage::delete([$seller->avatar1_path,$seller->avatar2_path,$seller->avatar3_path]);
+        // Suppression des images uploadés par le vendeur
+        // Non fonctionnel, a retravaillé !
+        /*
+            $defaut = 'sellersAvatar/avatarSellerDefault.jpg';
 
+            if($seller->avatar1_path !== $defaut){
 
-        //$seller->user()->delete();
+                Storage::delete($seller->avatar1_path);
+            }
+
+            if($seller->avatar2_path !== $defaut){
+
+                Storage::delete($seller->avatar2_path);
+            }
+
+            if($seller->avatar3_path !== $defaut){
+
+                Storage::delete($seller->avatar3_path);
+            }
+        */
+        
+        $seller->user()->delete();
 
         $seller->delete();
 

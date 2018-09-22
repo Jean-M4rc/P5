@@ -12,6 +12,6 @@ class Category extends Model
 
     public function category_seller()
     {
-        return $this->belongsToMany('App\Seller');
+        return $this->belongsToMany('App\Seller','sellers_categories', 'seller_follower_id', 'category_followed_id');
     }
 }
