@@ -14,6 +14,7 @@ class SellerListController extends Controller
         $sellers = Seller::all();
 
         $categories = Category::all()->load('category_seller');
+        
         /*
         foreach($categories as $category) {
             echo '<strong>' . $category->title . '</strong><br>';
@@ -26,6 +27,7 @@ class SellerListController extends Controller
 
         return view('sellersList', [
             'vendeurs' => $sellers,
+            'categories' =>$categories,
         ]);
 
         /*
