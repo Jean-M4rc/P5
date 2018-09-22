@@ -29,7 +29,7 @@ class InscriptionController extends Controller
 
         request()->validate([
 
-            'email' => ['required', 'email'],
+            'email' => ['required', 'email','unique:users,email'],
             'nickname' => ['required', 'string','min:4'],
             'firstname' => ['string','nullable','min:3'],
             'password' => ['required', 'confirmed', 'min:6'],
@@ -63,7 +63,7 @@ class InscriptionController extends Controller
 
         request()->validate([
 
-            'email' => ['required', 'email'],
+            'email' => ['required', 'email','unique:users,email'],
             'nickname' => ['required', 'string','min:4'],
             'firstname' => ['string','nullable','min:3'],
             'password' => ['required', 'confirmed', 'min:6'],
@@ -90,6 +90,8 @@ class InscriptionController extends Controller
             'password' => bcrypt(request('password')),
 
         ]);
+
+        if($user)
 
         // Traitement des images
 
@@ -122,6 +124,8 @@ class InscriptionController extends Controller
             'address' => request('address'),
 
         ]);
+
+        $seller->user()->associate($user);
 
         // On attribut le tableau des catégories du vendeur à la variable $category_followed
         $category_followed = request('product_category');

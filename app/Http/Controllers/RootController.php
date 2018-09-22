@@ -108,7 +108,10 @@ class RootController extends Controller
         
         $seller = Seller::where('id', request('seller_id'))->first();
 
-        $seller->user()->delete();
+        Storage::delete([$seller->avatar1_path,$seller->avatar2_path,$seller->avatar3_path]);
+
+
+        //$seller->user()->delete();
 
         $seller->delete();
 

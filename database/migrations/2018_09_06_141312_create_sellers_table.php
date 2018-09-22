@@ -13,16 +13,25 @@ class CreateSellersTable extends Migration
      */
     public function up()
     {
+        Schema::enableForeignKeyConstraints();
+
         Schema::create('sellers', function (Blueprint $table) {
+
             $table->increments('id');
-            $table->integer('user_id');
+            $table->unsignedInteger('user_id');
             $table->decimal('longitude',9,6);
             $table->decimal('latitude', 9,6);
             $table->string('avatar1_path');
             $table->string('avatar2_path');
             $table->string('avatar3_path');
             $table->text('presentation');
+            $table->string('phone')->nullable();
+            $table->string('address')->nullable();
+            $table->string('business_name')->nullable();
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
         });
     }
 
