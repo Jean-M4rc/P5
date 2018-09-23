@@ -1,23 +1,34 @@
 <!-- updateUserModal -->
-<div class="modal fade" id="logInModal" tabindex="-1" role="dialog" aria-labelledby="LogInModalCenter" aria-hidden="true">
+<div class="modal fade" id="updateUserModal" tabindex="-1" role="dialog" aria-labelledby="ModalCenter" aria-hidden="true">
 
     <div class="modal-dialog modal-dialog-centered" role="document">
 
         <div class="modal-content">
 
             <div class="modal-header">
-                <h2 class="modal-title" id="exampleModalCenterTitle">Connexion</h2>
+                <h2 class="modal-title" id="exampleModalCenterTitle">Modifier vos informations</h2>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
 
-            <form method="post" action='/connexion'>
+            <form method="post" action='/updateUSer'>
 
                 @csrf
 
                 <fieldset>
                     <div class="modal-body">
+
+                        <!-- Le pseudo nickname -->
+                        <div class="form-group">
+                                <label for="nickname" class="control-label">Votre pseudo / prénom :</label>
+                        <input id="nickname" class="form-control" name="nickname" type="text" placeholder="{{ auth()->user()->nickname }}" />
+    
+                                @if ($errors->has('nickname'))
+                                    <p class="form-text text-danger"> {{ $errors->first('nickname') }}</p>
+                                @endif
+    
+                            </div> 
 
                         <!-- Le mail -->
                         <div class="form-group">
