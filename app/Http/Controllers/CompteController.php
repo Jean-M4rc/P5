@@ -11,14 +11,13 @@ class CompteController extends Controller
         return view('profil');
     }
 
-    public function deconnexion(){
-
+    public function deconnexion()
+    {
         auth()->logout();
 
         flash("Vous êtes bien déconnecté. A bientôt !")->success();
 
         return redirect('/');
-
     }
     
 }

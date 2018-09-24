@@ -40,6 +40,8 @@ Route::group([
 
     Route::get('/profil', 'CompteController@accueil');
 
+    Route::post('/updateUser', 'UpdateController@updateUser');
+
     Route::get('/deconnexion', 'CompteController@deconnexion'); 
 
 });
