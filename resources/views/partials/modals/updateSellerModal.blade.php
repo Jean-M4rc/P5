@@ -34,7 +34,7 @@
                         <!-- la présentation :teaserSeller -->
                         <div class="form-group">
                             <label class="control-label">La présentation de votre structure : </label>
-                            <textarea class="form-control" id="teaserSeller" rows="3" name="teaserSeller">{{ auth()->user()->seller->presentation }}</textarea>
+                            <textarea class="form-control" id="teaserSeller" rows="3" name="teaserSeller" placeholder="{{ auth()->user()->seller->presentation }}"></textarea>
 
                             @if ($errors->has('teaserSeller'))
                                 <p class="form-text text-danger"> {{ $errors->first('teaserSeller') }}</p>
@@ -55,7 +55,7 @@
                         <!-- l'adresse :address -->
                         <div class="form-group">
                             <label class="control-label">L'adresse de votre point de vente : </label>
-                            <textarea class="form-control" id="address" rows="3" name="address">{{ auth()->user()->seller->address }}</textarea>
+                            <textarea class="form-control" id="address" rows="3" name="address" placeholder="{{ auth()->user()->seller->address }}"></textarea>
 
                             @if ($errors->has('address'))
                                 <p class="form-text text-danger"> {{ $errors->first('address') }}</p>
@@ -145,7 +145,7 @@
                         </div>
 
                         <div class="custom-file my-2">
-                            <input class="custom-file-input" id="InputFileAvatarSeller2" type="file" aria-describedby="fileHelp" name="avatarSeller1">
+                            <input class="custom-file-input" id="InputFileAvatarSeller2" type="file" aria-describedby="fileHelp" name="avatarSeller2">
             
                             <label class="custom-file-label" for="InputFileAvatarSeller2"><span class="d-none d-sm-inline">Ajouter/Modifier votre </span>2ème photo :</label>
             
