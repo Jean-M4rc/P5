@@ -36,7 +36,7 @@
         
         @if((auth()->user()->avatar_path))
 
-        <img src="{{ auth()->user()->avatar_path }}" alt="photo de profil" style="width:200px"/>
+        <br><img src="/storage/{{ auth()->user()->avatar_path }}" alt="photo de profil" style="width:200px"/>
 
         @else
 

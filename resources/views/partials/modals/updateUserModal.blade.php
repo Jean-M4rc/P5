@@ -12,7 +12,7 @@
                 </button>
             </div>
 
-            <form method="post" action='/updateUSer'>
+            <form method="post" action='/updateUser' enctype="multipart/form-data">
 
                 @csrf
 
@@ -48,19 +48,7 @@
                                 <p class="form-text text-danger"> {{ $errors->first('email') }}</p>
                             @endif
 
-                        </div>                       
-
-                        <!-- le mot de passe name:oldPassword -->
-                        <div class="form-group">
-                            <label class="control-label">Ancien mot de passe : </label>
-                            <input id="mdp" class="form-control" name="oldPassword" type="password"/>
-
-                            @if ($errors->has('oldPassword'))
-                                <p class="form-text text-danger"> {{ $errors->first('oldPassword') }}</p>
-                            @endif
-
                         </div>
-
                         
                         <!-- le nouveau mot de passe name:newPassword -->
                         <div class="form-group">
