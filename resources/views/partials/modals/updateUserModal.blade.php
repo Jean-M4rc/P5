@@ -19,21 +19,30 @@
                 <fieldset>
                     <div class="modal-body">
 
-                        <!-- Le pseudo nickname -->
+                        <!-- Le pseudo nickname name:nickname-->
                         <div class="form-group">
-                                <label for="nickname" class="control-label">Votre pseudo / prénom :</label>
-                        <input id="nickname" class="form-control" name="nickname" type="text" placeholder="{{ auth()->user()->nickname }}" />
+                            <label for="nickname" class="control-label">Votre pseudo / prénom :</label>
+                            <input id="nickname" class="form-control" name="nickname" type="text" placeholder="{{ auth()->user()->nickname }}" />
     
-                                @if ($errors->has('nickname'))
-                                    <p class="form-text text-danger"> {{ $errors->first('nickname') }}</p>
-                                @endif
-    
-                            </div> 
+                            @if ($errors->has('nickname'))
+                                <p class="form-text text-danger"> {{ $errors->first('nickname') }}</p>
+                            @endif
+                        </div> 
 
-                        <!-- Le mail -->
+                        <!-- Le firstname name:firstname -->
+                        <div class="form-group">
+                            <label for="firstname" class="control-label">Votre nom :</label>
+                            <input id="firstname" class="form-control" name="firstname" type="text" placeholder="{{ auth()->user()->firstname }}" />
+    
+                            @if ($errors->has('firstname'))
+                                <p class="form-text text-danger"> {{ $errors->first('firstname') }}</p>
+                            @endif
+                        </div> 
+
+                        <!-- Le mail name:email-->
                         <div class="form-group">
                             <label for="email" class="control-label">Adresse mail : </label>
-                            <input id="email" class="form-control" name="email" type="email" required />
+                            <input id="email" class="form-control" name="email" type="email" placeholder="{{ auth()->user()->email }}" />
 
                             @if ($errors->has('email'))
                                 <p class="form-text text-danger"> {{ $errors->first('email') }}</p>
@@ -41,34 +50,57 @@
 
                         </div>                       
 
-                        <!-- le mot de passe -->
+                        <!-- le mot de passe name:oldPassword -->
                         <div class="form-group">
-                            <label class="control-label">Mot de passe : </label>
-                            <input id="mdp" class="form-control" name="password" type="password" required />
+                            <label class="control-label">Ancien mot de passe : </label>
+                            <input id="mdp" class="form-control" name="oldPassword" type="password"/>
 
-                            @if ($errors->has('password'))
-                                <p class="form-text text-danger"> {{ $errors->first('password') }}</p>
+                            @if ($errors->has('oldPassword'))
+                                <p class="form-text text-danger"> {{ $errors->first('oldPassword') }}</p>
                             @endif
 
                         </div>
 
-                        <!-- cookiebox -->
                         
-                            <div class="form-group">
-                                <div class="custom-control custom-checkbox">
-                                        <input class="custom-control-input" id="customCheck1" name="remember" value="true" type="checkbox">
-                                        <label class="custom-control-label" for="customCheck1">Se souvenir de moi.</label>
-                                </div>
-                            </div>
+                        <!-- le nouveau mot de passe name:newPassword -->
+                        <div class="form-group">
+                            <label class="control-label">Nouveau mot de passe : </label>
+                            <input id="mdp2" class="form-control" name="newPassword" type="password"/>
 
-                        <!-- signInInfo -->
-                        <div class="alert alert-info">
-                            <p>Si vous n'êtes pas encore inscrit sur Iticourt, <a class="link" href="/inscription">"Je m'inscris !"</a></p>
+                            @if ($errors->has('newPassword'))
+                                <p class="form-text text-danger"> {{ $errors->first('newPassword') }}</p>
+                            @endif
+
                         </div>
+
+                        <!-- confirmation du nouveau mot de passe name:newPassword_confirmation-->
+                        <div class="form-group">
+                            <label class="control-label">Confirmer le nouveau mot de passe : </label>
+                            <input id="mdp3" class="form-control" name="newPassword_confirmation" type="password"/>
+
+                            @if ($errors->has('newPassword_confirmation'))
+                                <p class="form-text text-danger"> {{ $errors->first('newPassword_confirmation') }}</p>
+                            @endif
+
+                        </div>
+
+                        <!-- la photo de profil name:avatarProfil-->
+                        <div  class="custom-file">
+
+                            <input class="custom-file-input" id="InputFileAvatar" type="file" aria-describedby="fileHelp" name="avatarProfil">
+            
+                            <label class="custom-file-label" for="InputFileAvatar">Ajouter ou modifier votre photo de profil :</label>
+            
+                            @if ($errors->has('avatarProfil'))
+                                <p class="form-text text-danger"> {{ $errors->first('avatarProfil') }}</p>
+                            @endif
+            
+                        </div>
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Annuler</button>
-                        <input class="btn btn-primary" id="submit" type="submit" value="Connexion">
+                        <input class="btn btn-primary" id="submit" type="submit" value="Envoyer">
                     </div>
                 </fieldset>
             </form>

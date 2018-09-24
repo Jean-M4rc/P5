@@ -143,7 +143,7 @@
 
                 <label class="custom-file-label" for="InputFile1">Photo principale : <span style="color:red">*</span></label>
 
-                <small id="fileHelp" class="form-text text-muted">Ajouter une photo qui réprésente votre structure ou l'entrée de votre point de vente pour aider vos visiteurs.</small>
+                <small id="fileHelp" class="form-text text-muted">Ajouter une photo qui représente votre structure ou l'entrée de votre point de vente pour aider vos visiteurs.</small>
 
                 @if ($errors->has('avatar'))
                     <p class="form-text text-danger"> {{ $errors->first('avatar') }}</p>
