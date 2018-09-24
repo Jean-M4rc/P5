@@ -42,6 +42,8 @@ Route::group([
 
     Route::post('/updateUser', 'UpdateController@updateUser');
 
+    Route::post('/updateSeller', 'UpdateController@updateSeller');
+
     Route::get('/deconnexion', 'CompteController@deconnexion'); 
 
 });

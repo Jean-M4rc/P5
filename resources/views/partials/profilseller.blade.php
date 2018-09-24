@@ -39,7 +39,7 @@
     @endif
 
 </p>
-<div><p>Les photos de produits, lieu de vente :</p>
+<div><p>Vos photos :</p>
     
     <p>Photo principale :
         @if((auth()->user()->seller->avatar1_path))

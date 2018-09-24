@@ -95,4 +95,90 @@ class UpdateController extends Controller
 
         return back();
     }
+
+    /**
+     * Vérifier si un champ et rempli et s'il l'est vérifier les données et mettre à jour
+     * Le nom de la structure
+     * La présentation de la structure
+     * Les coordonnées GPS
+     * Le téléphone
+     * Les catégories de produits
+     * Les photos
+     *
+     * @return void
+     */
+    public function updateSellerr()
+    {
+        // Le nom de la structure
+        if (request('business_name')){
+
+            auth()->user()->seller()->update([
+                'business_name'=>request('business_name'),
+            ]);
+
+            flash('Vos informations ont été mise à jour');
+        }
+        
+        // La présentation
+        if (request('teaserSeller')){
+
+            request()->validate([
+                'firstname' => ['string','min:4'],
+            ]);
+
+            auth()->user()->update([
+                'firstname'=>request('firstname'),
+            ]);
+
+            flash('Vos informations ont été mise à jour');
+        }
+
+        // l'email
+        if (request('email')){
+
+            request()->validate([
+                'email' => ['email','unique:users,email'],
+            ]);
+
+            auth()->user()->update([
+                'email'=>request('email'),
+            ]);
+
+            flash('Vos informations ont été mise à jour');
+        }
+
+        // le nouveau mot de passe
+        if (request('newPassword')){
+
+            request()->validate([
+                'newPassword' => ['confirmed','min:6'],
+                'newPassword_confirmation' => ['required'],
+            ]);
+
+            auth()->user()->update([
+                'password'=>bcrypt(request('newPassword')),
+            ]);
+
+            flash('Vos informations ont été mise à jour');
+        }
+
+        // la photo de profil
+        if (request('avatarProfil')){
+
+            request()->validate([
+                'avatarProfil' => ['image'],
+            ]);
+
+            $path = request('avatarProfil')->store('usersAvatar','public');
+
+            auth()->user()->update([
+                'avatar_path' =>$path,
+            ]);
+
+            flash('Vos informations ont été mise à jour');
+        }
+
+        return back();
+    }
+
 }
