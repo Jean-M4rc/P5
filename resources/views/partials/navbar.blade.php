@@ -88,7 +88,8 @@
                         <!-- le mot de passe -->
                         <div class="form-group">
                             <label class="control-label">Mot de passe : </label>
-                            <input id="mdp" class="form-control" name="password" type="password" required />
+                            <!--<input id="mdp" class="form-control" name="password" type="password" required />-->
+                            <password-input1></password-input1>
 
                             @if ($errors->has('password'))
                                 <p class="form-text text-danger"> {{ $errors->first('password') }}</p>

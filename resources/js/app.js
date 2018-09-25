@@ -17,6 +17,8 @@ window.Vue = require('vue');
 
 Vue.component('password-input1', require('./components/PasswordInput1.vue'));
 
+Vue.component('map-div', require('./components/MapDiv.vue'));
+
 const app = new Vue({
     el: '#app'
 });

@@ -10,8 +10,6 @@
         <p class="lead text-center flex-center" style="height:150px">Que voulez-vous faire ?</p>        
     </div>
 
-    <example-component></example-component>
-
     <div class="row"><!-- partie à gérer en vuejs pour animer la succession de bouton -->
 
             <div class="col-12 col-md-6 flex-column flex-center" style="height:160px">
@@ -28,6 +26,10 @@
                     </a>
             </div>
              
+    </div>
+
+    <div  id="mapid">
+
     </div>
 
 @endsection
