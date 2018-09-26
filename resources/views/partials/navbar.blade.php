@@ -11,11 +11,10 @@
             <li class="nav-item">
                 <a class="nav-link {{ request()->is('about') ? 'active' : '' }}" href="/about">A propos</a>
             </li>
-        <!-- Cette page n'est pas fonctionnelle
+        
             <li class="nav-item">
                     <a class="nav-link {{ request()->is('about') ? 'active' : '' }}" href="/sellersList">Nos vendeurs</a>
             </li>
-        -->
 
         </ul>
 

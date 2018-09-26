@@ -13,7 +13,7 @@
                     <p class="alert alert-danger">Etes-vous sûr de vouloir supprimer ce point de vente ?</p>
                     <p>Nom de l'utilisateur : {{ $pdv->user->nickname }}</p>
                     <p>Catégories des produits :
-                        @foreach ($pdv->seller_category as $seller_category)
+                        @foreach ($pdv->category as $seller_category)
                             {{ $seller_category->name }}
                         @endforeach
                     </p>

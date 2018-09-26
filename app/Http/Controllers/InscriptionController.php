@@ -128,10 +128,10 @@ class InscriptionController extends Controller
         $seller->user()->associate($user);
 
         // On attribut le tableau des catégories du vendeur à la variable $category_followed
-        $category_followed = request('product_category');
+        $category = request('product_category');
 
         // On attache le vendeur à ses categories
-        $seller->seller_category()->attach($category_followed);
+        $seller->category()->attach($category);
 
         auth()->attempt([
             'email'=> request('email'),

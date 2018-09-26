@@ -11,31 +11,27 @@ class SellerListController extends Controller
     public function sellersList()
     {
         
-        $sellers = Seller::all();
-
-        $categories = Category::all()->load('category_seller');
-        
-        /*
-        foreach($categories as $category) {
-            echo '<strong>' . $category->title . '</strong><br>';
-            foreach($category->posts as $post) {
-                echo $post->title . '<br>';
-            }
-        }
-        */
-        
+        $sellers_cat1 = Category::find(1)->seller()->get();
+        $sellers_cat2 = Category::find(2)->seller()->get();
+        $sellers_cat3 = Category::find(3)->seller()->get();
+        $sellers_cat4 = Category::find(4)->seller()->get();
+        $sellers_cat5 = Category::find(5)->seller()->get();
+        $sellers_cat6 = Category::find(6)->seller()->get();
+        $sellers_cat7 = Category::find(7)->seller()->get();
+        $sellers_cat8 = Category::find(8)->seller()->get();
 
         return view('sellersList', [
-            'vendeurs' => $sellers,
-            'categories' =>$categories,
-        ]);
 
-        /*
-        return view('sellersList', [
-
-            'vendeurs' => $sellers,
-            'categories' => $categories,
+            'sellers_cat1'=>$sellers_cat1,
+            'sellers_cat2'=>$sellers_cat2,
+            'sellers_cat3'=>$sellers_cat3,
+            'sellers_cat4'=>$sellers_cat4,
+            'sellers_cat5'=>$sellers_cat5,
+            'sellers_cat6'=>$sellers_cat6,
+            'sellers_cat7'=>$sellers_cat7,
+            'sellers_cat8'=>$sellers_cat8,
+            
         ]);
-        */
+       
     }
 }

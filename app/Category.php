@@ -10,8 +10,8 @@ class Category extends Model
         'name',
     ];
 
-    public function category_seller()
+    public function seller()
     {
-        return $this->belongsToMany('App\Seller','sellers_categories', 'seller_follower_id', 'category_followed_id');
+        return $this->belongsToMany('App\Seller');
     }
 }

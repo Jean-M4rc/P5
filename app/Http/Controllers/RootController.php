@@ -22,7 +22,7 @@ class RootController extends Controller
 
         return view('root', [
             'utilisateurs' => User::where('admin','0')->get()->load('seller'),
-            'pdvs' => Seller::with('seller_category')->get()->load('user'),
+            'pdvs' => Seller::with('category')->get()->load('user'),
             'commentaires' => Comment::with('seller')->get()->load('user'),
         ]);
     }

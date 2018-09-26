@@ -22,7 +22,7 @@
                 <td class="d-none d-lg-table-cell align-middle">{{ $pdv->user->nickname }}</td>
                 <td class="align-middle">{{ $pdv->business_name }}</td>
                 <td class="d-none d-lg-table-cell align-middle">
-                    @foreach ($pdv->seller_category as $seller_category)
+                    @foreach ($pdv->category as $seller_category)
                         {{ $seller_category->name }}
                     @endforeach
                 </td>

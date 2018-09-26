@@ -4,21 +4,19 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSellersCategoriesTable extends Migration
+class CategorySeller extends Migration
 {
     /**
      * Run the migrations.
-     * Table pivot de suivi des categories par les vendeurs
-     * Les vendeurs peuvent avoir plusieurs categories
      *
      * @return void
      */
     public function up()
     {
-        Schema::create('sellers_categories', function (Blueprint $table) {
+        Schema::create('category_seller', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('seller_follower_id');
-            $table->integer('category_followed_id');
+            $table->integer('seller_id');
+            $table->integer('category_id');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateSellersCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sellers_categories');
+        Schema::dropIfExists('categories_sellers');
     }
 }

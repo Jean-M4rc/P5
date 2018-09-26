@@ -23,7 +23,7 @@ Route::post('/inscriptionAcheteur', 'InscriptionController@traitementAcheteur');
 
 Route::post('/connexion', 'ConnexionController@traitement');
 
-// Route::get( '/sellersList' , 'SellerListController@sellersList'); ---- NON FONCTIONNELLE
+Route::get( '/sellersList' , 'SellerListController@sellersList');
 
 Route::group([
     'middleware' => 'App\Http\Middleware\Auth'
