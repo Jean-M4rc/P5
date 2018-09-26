@@ -1,15 +1,9 @@
-@forelse ($categories  as $category)
+@forelse ($categories[5]->sellers as $seller)
 
-    @foreach ($category->category_seller as $seller)
+    @include('partials.cat.info_tab')
 
-        @if ($category->category_seller == "6")
-        
-            On est chez cat6 on un vendeur
-            
-        @endif
-
-    @endforeach
-    
 @empty
-    <h3 class="alert alert-warning text-center">Aucun vendeur enregistré dans cette catégorie</h3>
+
+    @include('partials.cat.alert_tab')
+
 @endforelse

@@ -41,56 +41,82 @@
         <!-- cat1 tab -->
         <div class="tab-pane active" id="cat1" role="tabpanel" aria-labelledby="cat1-tab">
 
+            @include('partials.cat.nav_tab')
+
             @include('partials.cat.cat1_tab')
+
+                </tbody>
+            </table>
 
         </div>
 
         <!-- cat2 tab -->
         <div class="tab-pane" id="cat2" role="tabpanel" aria-labelledby="cat2-tab">
 
+            @include('partials.cat.nav_tab')
             @include('partials.cat.cat2_tab')
+                </tbody>
+            </table>
 
         </div>
 
         <!-- cat3 tab -->
         <div class="tab-pane" id="cat3" role="tabpanel" aria-labelledby="cat3-tab">
 
+            @include('partials.cat.nav_tab')
             @include('partials.cat.cat3_tab')
+                </tbody>
+            </table>
 
         </div>
 
         <!-- cat4 tab -->
         <div class="tab-pane" id="cat4" role="tabpanel" aria-labelledby="cat4-tab">
 
+            @include('partials.cat.nav_tab')
             @include('partials.cat.cat4_tab')
+                </tbody>
+            </table>
 
         </div>
 
         <!-- cat5 tab -->
         <div class="tab-pane" id="cat5" role="tabpanel" aria-labelledby="cat5-tab">
 
+            @include('partials.cat.nav_tab')
             @include('partials.cat.cat5_tab')
+                </tbody>
+            </table>
 
         </div>
 
         <!-- cat6 tab -->
         <div class="tab-pane" id="cat6" role="tabpanel" aria-labelledby="cat6-tab">
 
+            @include('partials.cat.nav_tab')
             @include('partials.cat.cat6_tab')
+                </tbody>
+            </table>
 
         </div>
 
         <!-- cat7 tab -->
         <div class="tab-pane" id="cat7" role="tabpanel" aria-labelledby="cat7-tab">
 
+            @include('partials.cat.nav_tab')
             @include('partials.cat.cat7_tab')
+                </tbody>
+            </table>
 
         </div>
 
         <!-- cat8 tab -->
         <div class="tab-pane" id="cat8" role="tabpanel" aria-labelledby="cat8-tab">
 
+            @include('partials.cat.nav_tab')
             @include('partials.cat.cat8_tab')
+                </tbody>
+            </table>
 
         </div>
 

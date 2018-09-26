@@ -17,7 +17,7 @@ class Seller extends User
      *
      * @return array
      */
-    public function category()
+    public function categories()
     {
         return $this->belongsToMany('App\Category');
     }

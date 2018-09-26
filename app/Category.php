@@ -10,7 +10,7 @@ class Category extends Model
         'name',
     ];
 
-    public function seller()
+    public function sellers()
     {
         return $this->belongsToMany('App\Seller');
     }
