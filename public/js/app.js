@@ -14012,6 +14012,10 @@ window.Vue = __webpack_require__(37);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+Vue.component('toptitleview', __webpack_require__(55));
+
+Vue.component('generalmapview', __webpack_require__(58));
+
 Vue.component('password-input1', __webpack_require__(40));
 
 Vue.component('map-div', __webpack_require__(43));
@@ -47560,6 +47564,413 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(3)
+/* script */
+var __vue_script__ = __webpack_require__(56)
+/* template */
+var __vue_template__ = __webpack_require__(57)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/TopTitleView.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-23a88333", Component.options)
+  } else {
+    hotAPI.reload("data-v-23a88333", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 56 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+/* 57 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("h1", { staticClass: "display-6 text-center mt-2" }, [
+        _vm._v("Iticourt")
+      ]),
+      _vm._v(" "),
+      _c("p", { staticClass: "lead text-center container" }, [
+        _vm._v("L'itinéraire des circuits courts")
+      ]),
+      _vm._v(" "),
+      _c("hr"),
+      _vm._v(" "),
+      _c("div", { staticClass: "row d-none d-md-block mt-5" }, [
+        _c(
+          "p",
+          {
+            staticClass: "lead text-center flex-center",
+            staticStyle: { height: "150px" }
+          },
+          [_vm._v("Que voulez-vous faire ?")]
+        )
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-23a88333", module.exports)
+  }
+}
+
+/***/ }),
+/* 58 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(3)
+/* script */
+var __vue_script__ = __webpack_require__(59)
+/* template */
+var __vue_template__ = __webpack_require__(60)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/GeneralMapView.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-25a036c4", Component.options)
+  } else {
+    hotAPI.reload("data-v-25a036c4", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 59 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/*
+            var mymap = L.map('app').setView([49.182863, -0.370679], 10),
+            L.tileLayer('https://korona.geog.uni-heidelberg.de/tiles/roads/x={x}&y={y}&z={z}', {
+                maxZoom: 18,
+                id: 'mapbox.streets',
+                accessToken: 'your.mapbox.access.token'
+            }).addTo(mymap),
+*/
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            show: false
+
+        };
+    }
+});
+
+/*
+export default{
+    var { LMap, LTileLayer, LMarker } = Vue2Leaflet;
+    el: '#app',
+  components: { LMap, LTileLayer, LMarker },
+  data() {
+    return {
+    show: false,
+      zoom:10,
+      center: L.latLng(49.182863, -0.370679),
+      url:'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
+      attribution:'&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+      marker: L.latLng(49.182863, -0.370679),
+    }
+  }
+};  
+*/
+
+/***/ }),
+/* 60 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "div",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: !_vm.show,
+            expression: "!show"
+          }
+        ],
+        staticClass: "row"
+      },
+      [
+        _c(
+          "div",
+          {
+            staticClass: "col-12 col-md-6 flex-column flex-center",
+            staticStyle: { height: "150px" }
+          },
+          [
+            _c(
+              "a",
+              {
+                attrs: { id: "buybtn1", href: "" },
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.show = !_vm.show
+                  }
+                }
+              },
+              [
+                _c("i", {
+                  staticClass: "fas fa-shopping-basket fa-4x flex-center"
+                }),
+                _vm._v(" "),
+                _c("p", { staticClass: "lead text-center" }, [
+                  _vm._v("Vous achetez !")
+                ])
+              ]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _vm._m(0)
+      ]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.show,
+            expression: "show"
+          }
+        ]
+      },
+      [
+        _c(
+          "button",
+          {
+            on: {
+              click: function($event) {
+                _vm.show = !_vm.show
+              }
+            }
+          },
+          [_vm._v("Fermer la carte")]
+        )
+      ]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.show,
+            expression: "show"
+          }
+        ],
+        attrs: { id: "mapid" }
+      },
+      [
+        _c(
+          "div",
+          { attrs: { id: "app" } },
+          [
+            _c(
+              "l-map",
+              { attrs: { zoom: _vm.zoom, center: _vm.center } },
+              [
+                _c("l-tile-layer", {
+                  attrs: { url: _vm.url, attribution: _vm.attribution }
+                }),
+                _vm._v(" "),
+                _c("l-marker", { attrs: { "lat-lng": _vm.marker } })
+              ],
+              1
+            )
+          ],
+          1
+        )
+      ]
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "col-12 col-md-6 flex-column flex-center ",
+        staticStyle: { height: "150px" },
+        attrs: { id: "sellbtn1" }
+      },
+      [
+        _c(
+          "a",
+          {
+            staticClass: "links",
+            attrs: {
+              href: "#logInModal",
+              "data-toggle": "modal",
+              "data-target": "#logInModal"
+            }
+          },
+          [
+            _c("i", { staticClass: "fas fa-home fa-4x flex-center" }),
+            _vm._v(" "),
+            _c("p", { staticClass: "lead " }, [_vm._v("Vous vendez !")])
+          ]
+        )
+      ]
+    )
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-25a036c4", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
