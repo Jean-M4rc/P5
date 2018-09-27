@@ -20,22 +20,14 @@ class ConnexionController extends Controller
             'password' => ['required', 'min:6'],
         ]);
 
-        // TODO Gérer la mise en place de token RememberMe
-        
-        $remember = request('remember');
-
-        if(!isset($remember)){
-
-            $remember = false;
-
-        }
-
         // Méthode non fonctionnelle, le cookie est toujours actif        
         $resultat = auth()->attempt([
             'email'=> request('email'),
             'password' => request('password'),
             'ban' => 0,
-        ], $remember);
+        ], request('$remember'));
+
+        
         
         if($resultat){
 

@@ -17,7 +17,7 @@ class Auth
     {
         if (auth()->guest()){
 
-            flash("Vous devenez vous connecter pour voir cette page.")->error();
+            flash("Vous devez vous connecter pour voir cette page.")->error();
 
             return redirect('/');
 

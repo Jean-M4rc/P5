@@ -18,4 +18,14 @@ class SellerListController extends Controller
         ]);
        
     }
+
+    public function sellerFile()
+    {
+       
+        $seller = Seller::where('id', request('id'))->get()->first();
+
+        return view('sellerFile', [
+            'seller' => $seller,
+        ]);
+    }
 }

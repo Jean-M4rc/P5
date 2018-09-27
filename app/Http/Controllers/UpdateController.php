@@ -170,12 +170,12 @@ class UpdateController extends Controller
         if (request('product_category')){
 
             //On détache les anciennes catégories
-            auth()->user()->seller->category()->detach();
+            auth()->user()->seller->categories()->detach();
 
 
             // On attache le vendeur à ses categories
             $category = request('product_category');
-            auth()->user()->seller->category()->attach($category);
+            auth()->user()->seller->categories()->attach($category);
 
         }
 
