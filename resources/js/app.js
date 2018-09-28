@@ -15,13 +15,9 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('toptitleview', require('./components/TopTitleView.vue'));
-
 Vue.component('generalmapview', require('./components/GeneralMapView.vue'))
 
 Vue.component('password-input1', require('./components/PasswordInput1.vue'));
-
-Vue.component('map-div', require('./components/MapDiv.vue'));
 
 Vue.component('comment-form', require('./components/CommentForm.vue'));
 
