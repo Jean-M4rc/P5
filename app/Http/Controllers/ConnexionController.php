@@ -33,13 +33,13 @@ class ConnexionController extends Controller
 
             flash("Vous êtes bien connecté.")->success();
 
-            return redirect('/');
+            return back();
         
         } else {
 
             flash()->overlay('Echec de la connexion !', 'Attention')->error();
 
-            return redirect('/');
+            return back();
         }
         
         /*

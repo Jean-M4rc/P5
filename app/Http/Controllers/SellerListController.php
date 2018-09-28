@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Seller;
 use App\Category;
+use App\Comment;
 
 class SellerListController extends Controller
 {
@@ -24,8 +25,11 @@ class SellerListController extends Controller
        
         $seller = Seller::where('id', request('id'))->get()->first();
 
+        $comments = Comment::where('seller_id', request('id'))->get();
+
         return view('sellerFile', [
             'seller' => $seller,
+            'comments' => $comments,
         ]);
     }
 }

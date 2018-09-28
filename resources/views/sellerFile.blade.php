@@ -14,7 +14,7 @@
         @endforeach
     </p>
     <p>Mon adresse : {{$seller->address}}</p>
-    <div class="row">
+    <div class="row mb-4">
         <p class="col-12 text-center">Les photos de mes produits :</p>
         
         <div class="row">
@@ -43,8 +43,21 @@
 
         </div>
     </div>
+    <!-- ici inclure la vue des commentaires - on appelle le composant Vuejs -->
+
+    @auth
+        <comment-form userid="{{auth()->user()->id}}" sellerid="{{$seller->id}}"></comment-form>
+    @endauth
+
+    @if(auth()->guest())
+        <div class="alert alert-info text-center"> Vous devez être connecté pour commenter !</div>
+    @endif
+
+    @foreach($comments as $comment)
+        <h3>{{$comment->title}}<span> envoyé le : {{$comment->created_at->format('d/m/Y à H:i:s')}}</span></h3>
+        <p>{{$comment->content}}</p>
+    @endforeach
 </div>
 
-<!-- ici inclure la vue des commentaires - on appelle le composant Vuejs -->
-<comment-form></comment-form>
+
 @endsection

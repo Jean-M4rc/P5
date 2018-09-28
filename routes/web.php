@@ -46,6 +46,8 @@ Route::group([
 
     Route::post('/updateSeller', 'UpdateController@updateSeller');
 
+    Route::post('/comments', 'CommentsController@store');
+
     Route::get('/deconnexion', 'CompteController@deconnexion'); 
 
 });
