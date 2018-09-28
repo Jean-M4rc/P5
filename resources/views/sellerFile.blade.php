@@ -45,4 +45,6 @@
     </div>
 </div>
 
+<!-- ici inclure la vue des commentaires - on appelle le composant Vuejs -->
+<comment-form></comment-form>
 @endsection
