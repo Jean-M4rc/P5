@@ -54,8 +54,14 @@
     @endif
 
     @foreach($comments as $comment)
-        <h3>{{$comment->title}}<span> envoyé le : {{$comment->created_at->format('d/m/Y à H:i:s')}}</span></h3>
-        <p>{{$comment->content}}</p>
+        <div class="media">
+            <img class="mr-3" src="/storage/{{ $comment->user->avatar_path}} " style="width:100px;height:100px" alt="Photo de profil">
+            <div class="media-body">
+                <h5 class="mt-0">{{$comment->title}}<span> envoyé par {{$comment->user->nickname}} le : {{$comment->created_at->format('d/m/Y à H:i:s')}}</span></h5>
+                {{$comment->content}}
+              
+            </div>
+        </div>
     @endforeach
 </div>
 

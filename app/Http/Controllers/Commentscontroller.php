@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Comment;
 
-class Commentscontroller extends Controller
+class CommentsController extends Controller
 {
    public function store()
    {
@@ -18,7 +18,7 @@ class Commentscontroller extends Controller
 
     ]);
     
-    Comment::create([
+    $comment = Comment::create([
         'content' => request('content'),
         'title' => request('title'),
         'seller_id'=>request('seller'),
@@ -27,24 +27,4 @@ class Commentscontroller extends Controller
 
     return back();
    }
-
-   /*
-        public function NewComment()
-        {
-            request()->validate([
-                'seller_id'=> ['required'],
-                'title' => ['required','string'],
-                'comment' => ['required', 'text'],
-            ]);
-
-            auth()->user()->comments()->create([
-                'comment' => request('comment'),
-                'title' => request('title'),
-            ]);
-
-            flash('Votre commentaire est enregistré.')->success();
-
-            return back();
-        }
-    */
 }

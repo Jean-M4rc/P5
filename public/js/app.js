@@ -47392,14 +47392,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/*
-            var mymap = L.map('app').setView([49.182863, -0.370679], 10),
-            L.tileLayer('https://korona.geog.uni-heidelberg.de/tiles/roads/x={x}&y={y}&z={z}', {
-                maxZoom: 18,
-                id: 'mapbox.streets',
-                accessToken: 'your.mapbox.access.token'
-            }).addTo(mymap),
-*/
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -47411,6 +47404,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     data: function data() {
+
         return {
             show: false,
             zoom: 13,
@@ -47421,24 +47415,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
     }
 });
-
-/*
-export default{
-    var { LMap, LTileLayer, LMarker } = Vue2Leaflet;
-    el: '#app',
-  components: { LMap, LTileLayer, LMarker },
-  data() {
-    return {
-    show: false,
-      zoom:10,
-      center: L.latLng(49.182863, -0.370679),
-      url:'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
-      attribution:'&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-      marker: L.latLng(49.182863, -0.370679),
-    }
-  }
-};  
-*/
 
 /***/ }),
 /* 42 */
@@ -61446,7 +61422,8 @@ var render = function() {
             expression: "show"
           }
         ],
-        staticStyle: { height: "100vh", width: "100%" },
+        staticClass: "col-12 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3",
+        staticStyle: { height: "90vh" },
         attrs: { id: "mapbox" }
       },
       [
@@ -61730,7 +61707,6 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
 //
 //
 //

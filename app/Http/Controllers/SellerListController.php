@@ -23,9 +23,9 @@ class SellerListController extends Controller
     public function sellerFile()
     {
        
-        $seller = Seller::where('id', request('id'))->get()->first();
+        $seller = Seller::where('id', request('id'))->get()->first()->load('user');
 
-        $comments = Comment::where('seller_id', request('id'))->get();
+        $comments = Comment::where('seller_id', request('id'))->latest()->get();
 
         return view('sellerFile', [
             'seller' => $seller,

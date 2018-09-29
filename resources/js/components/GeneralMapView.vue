@@ -32,7 +32,7 @@
 
         <div v-show="show"><button @click="show = !show">Fermer la carte</button></div>
 
-        <div id="mapbox" v-show="show" style="height:100vh;width:100%">
+        <div class="col-12 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3" id="mapbox" v-show="show" style="height:90vh">
             <l-map :zoom="zoom" :center="center">
                 <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
                 <l-marker :lat-lng="marker"></l-marker>
@@ -42,14 +42,7 @@
     </div>
 </template>
 <script>
-/*
-            var mymap = L.map('app').setView([49.182863, -0.370679], 10),
-            L.tileLayer('https://korona.geog.uni-heidelberg.de/tiles/roads/x={x}&y={y}&z={z}', {
-                maxZoom: 18,
-                id: 'mapbox.streets',
-                accessToken: 'your.mapbox.access.token'
-            }).addTo(mymap),
-*/
+
 import { LMap, LTileLayer, LMarker } from 'vue2-leaflet';
 
 export default {
@@ -61,6 +54,7 @@ export default {
   },
    
     data(){
+
         return {
             show :false,
             zoom:13,
@@ -72,21 +66,4 @@ export default {
     }
 }
 
-/*
-export default{
-    var { LMap, LTileLayer, LMarker } = Vue2Leaflet;
-    el: '#app',
-  components: { LMap, LTileLayer, LMarker },
-  data() {
-    return {
-    show: false,
-      zoom:10,
-      center: L.latLng(49.182863, -0.370679),
-      url:'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
-      attribution:'&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-      marker: L.latLng(49.182863, -0.370679),
-    }
-  }
-};  
-*/
 </script>

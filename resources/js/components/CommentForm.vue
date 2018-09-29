@@ -13,8 +13,7 @@
             <button class="btn btn-primary" type="submit">Commenter</button>
         </fieldset>
     </form>
-</div>
-    
+</div> 
 </template>
 
 <script>

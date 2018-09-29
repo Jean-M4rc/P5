@@ -16,8 +16,13 @@ class Comment extends Model
         'user_id','seller_id','title','content',
     ];
 
-    public function sellers()
+    public function seller()
     {
-        return $this->belongTo('App\Seller');
+        return $this->belongsTo('App\Seller');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
     }
 }
