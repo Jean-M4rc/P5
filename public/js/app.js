@@ -61758,7 +61758,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticClass: "my-3 col-lg-6 offset-lg-3" }, [
     _c(
       "form",
       {

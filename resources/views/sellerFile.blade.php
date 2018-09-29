@@ -53,16 +53,22 @@
         <div class="alert alert-info text-center"> Vous devez être connecté pour commenter !</div>
     @endif
 
+    <ul class="list-unstyled col-lg-6 offset-lg-3">
+
     @foreach($comments as $comment)
-        <div class="media">
-            <img class="mr-3" src="/storage/{{ $comment->user->avatar_path}} " style="width:100px;height:100px" alt="Photo de profil">
-            <div class="media-body">
-                <h5 class="mt-0">{{$comment->title}}<span> envoyé par {{$comment->user->nickname}} le : {{$comment->created_at->format('d/m/Y à H:i:s')}}</span></h5>
+
+        <li class="media row justify-content-center my-3 py-2 border border-primary rounded w-auto">
+            <img class="mr-1 flex-end" src="/storage/{{ $comment->user->avatar_path}}" width="100px" height="100px" alt="Photo de profil">
+            <div class="media-body col-8 flex-start text-left">
+                <h5 class="mt-0">{{$comment->title}}<span class="text-muted"> envoyé par {{$comment->user->nickname}} le : {{$comment->created_at->format('d/m/Y à H:i:s')}}</span></h5>
                 {{$comment->content}}
               
             </div>
-        </div>
+        </li>
+
     @endforeach
+
+    </ul>
 </div>
 
 

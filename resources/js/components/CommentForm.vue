@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="my-3 col-lg-6 offset-lg-3">
     <form class="flex-center" @submit.prevent="submitComment">
         <fieldset style="width:100%">
             <div class="form-group">
