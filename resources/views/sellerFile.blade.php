@@ -46,29 +46,30 @@
     <!-- ici inclure la vue des commentaires - on appelle le composant Vuejs -->
 
     @auth
-        <comment-form userid="{{auth()->user()->id}}" sellerid="{{$seller->id}}"></comment-form>
+        <comment-form userid="{{auth()->user()->id}}" sellerid="{{$seller->id}}" comments="{{$comments}}"></comment-form>
     @endauth
-
+    
     @if(auth()->guest())
         <div class="alert alert-info text-center"> Vous devez être connecté pour commenter !</div>
     @endif
-
+<!--
     <ul class="list-unstyled col-lg-6 offset-lg-3">
 
     @foreach($comments as $comment)
 
-        <li class="media row justify-content-center my-3 py-2 border border-primary rounded w-auto">
-            <img class="mr-1 flex-end" src="/storage/{{ $comment->user->avatar_path}}" width="100px" height="100px" alt="Photo de profil">
+        <li class="media my-3 py-2 border border-primary rounded w-auto">
+            <img class="flex-end ml-2" src="/storage/{{ $comment->user->avatar_path}}" width="100px" height="100px" alt="Photo de profil">
             <div class="media-body col-8 flex-start text-left">
-                <h5 class="mt-0">{{$comment->title}}<span class="text-muted"> envoyé par {{$comment->user->nickname}} le : {{$comment->created_at->format('d/m/Y à H:i:s')}}</span></h5>
-                {{$comment->content}}
-              
+                <h4 class="my-0">{{$comment->title}}</h4>
+                <small class="text-muted mt-0"> envoyé par {{$comment->user->nickname}} le : {{$comment->created_at->format('d/m/Y à H:i:s')}}</small>
+                <p class="text-justify">{{$comment->content}}</p>
             </div>
         </li>
 
     @endforeach
 
     </ul>
+-->
 </div>
 
 

@@ -61725,9 +61725,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['userid', 'sellerid'],
+    props: ['userid', 'sellerid', 'comments'],
 
     data: function data() {
         return {
@@ -61843,6 +61854,52 @@ var render = function() {
           )
         ])
       ]
+    ),
+    _vm._v(" "),
+    _c(
+      "ul",
+      { staticClass: "list-unstyled col-lg-6 offset-lg-3" },
+      _vm._l(_vm.comments, function(comment, index) {
+        return _c(
+          "li",
+          {
+            key: index,
+            staticClass: "media my-3 py-2 border border-primary rounded w-auto"
+          },
+          [
+            _c("img", {
+              staticClass: "flex-end ml-2",
+              attrs: {
+                src: "",
+                width: "100px",
+                height: "100px",
+                alt: "Photo de profil"
+              }
+            }),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "media-body col-8 flex-start text-left" },
+              [
+                _c("h4", { staticClass: "my-0" }, [_vm._v(_vm._s(comment))]),
+                _vm._v(" "),
+                _c("small", { staticClass: "text-muted mt-0" }, [
+                  _vm._v(
+                    " envoyé par " +
+                      _vm._s(comment) +
+                      " le : " +
+                      _vm._s(comment)
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-justify" }, [
+                  _vm._v(_vm._s(comment.content))
+                ])
+              ]
+            )
+          ]
+        )
+      })
     )
   ])
 }
