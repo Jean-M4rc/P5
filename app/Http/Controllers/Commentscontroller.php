@@ -25,6 +25,8 @@ class CommentsController extends Controller
         'user_id'=>request('user'),
     ]);
 
+    flash('Votre commentaire est ajouté')->success();
+    
     return back();
    }
 }

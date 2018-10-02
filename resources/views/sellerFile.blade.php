@@ -43,16 +43,33 @@
 
         </div>
     </div>
-    <!-- ici inclure la vue des commentaires - on appelle le composant Vuejs -->
 
     @auth
-        <comment-form userid="{{auth()->user()->id}}" sellerid="{{$seller->id}}" comments="{{$comments}}"></comment-form>
+
+    <div class="my-3 col-lg-6 offset-lg-3">
+        <form class="flex-center" method="post" action="/comments">
+            @csrf
+            <fieldset style="width:100%">
+                <div class="form-group">
+                    <h4>Laissez un commentaire !</h4>
+                    <label class="text-dark" for="titleComment">Titre de votre commentaire :</label>
+                    <input class="form-control" id="titleComment" type="text" name="title"><br>
+                    <input type="hidden" name="user" value="{{auth()->user()->id}}">
+                    <input type="hidden" name="seller" value="{{$seller->id}}">
+                    <label class="text-dark text-center" for="TextareaSeller">Votre commentaire :</label>
+                    <textarea class="form-control" id="TextareaSeller" rows="3" name="content"></textarea>
+                </div>
+                <button class="btn btn-primary" type="submit">Commenter</button>
+            </fieldset>
+        </form>
+    </div> 
+
     @endauth
     
     @if(auth()->guest())
         <div class="alert alert-info text-center"> Vous devez être connecté pour commenter !</div>
     @endif
-<!--
+
     <ul class="list-unstyled col-lg-6 offset-lg-3">
 
     @foreach($comments as $comment)
@@ -69,7 +86,6 @@
     @endforeach
 
     </ul>
--->
 </div>
 
 
