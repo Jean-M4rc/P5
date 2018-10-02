@@ -34,10 +34,10 @@
                 
 
                 <!-- partie caché en vue large -->
-				<td class="d-table-cell d-sm-none">
+				<td class="d-table-cell d-sm-none" style="width:120px">
                     <button class="btn btn-outline-success action-toggler mb-1" type="button" data-toggle="collapse" data-target="#actionCollapsed{{ $pdv->id }}" aria-controls="actionCollapsed" aria-expanded="false"><i class="fas fa-bars"></i></button>
                     
-                    <div id="actionCollapsed{{ $pdv->id }}" class="collapse px-0" style="width:90px">
+                    <div id="actionCollapsed{{ $pdv->id }}" class="collapse px-0 mx-auto" >
                         
                         <button class="btn btn-outline-info" type="button" data-toggle="modal" data-target="#modalMapSeller{{ $pdv->id }}"><i class="fas fa-map-marked-alt"></i></button><br/>
                         
@@ -65,6 +65,5 @@
             
         @endforelse
          
-          
     </tbody>
 </table> 

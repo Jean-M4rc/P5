@@ -21,9 +21,9 @@ class RootController extends Controller
     {
 
         return view('root', [
-            'utilisateurs' => User::where('admin','0')->get()->load('seller'),
+            'utilisateurs' => User::with(['seller','comments'])->where('admin','0')->get(),
             'pdvs' => Seller::with('categories')->get()->load('user'),
-            'commentaires' => Comment::with('seller')->get()->load('user'),
+            'comments' => Comment::with('seller')->latest()->get()->load('user'),
         ]);
     }
 

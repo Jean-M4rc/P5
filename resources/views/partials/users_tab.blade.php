@@ -40,12 +40,12 @@
                         <p class="text-primary">Inscrit le {{ $utilisateur->created_at->format('d/m/Y à H:i:s') }}</p>
                         <p class="text-dark">Rôle : {{ $utilisateur->seller ? 'Vendeur' : 'Acheteur'}}</p>
                         <p class="text-primary">Nombre de commentaires postés : {{ count($utilisateur->comments) }}</p>
-                        <div>
+                        <div class="d-flex flex-column mb-3">
                             <p class="text-dark"> Image de profil :</p>
-                            <img src="{{ $utilisateur->avatar_path }}"/>
+                            <img class="mx-auto" src="/storage/{{ $utilisateur->avatar_path }}" width="200px" height="200px"/>
                         </div>
                         @if ($utilisateur->seller)
-                        <p>Lien vers la fiche du point de vente : <a href="#"></a></p>                            
+                        <p class="text-primary">Lien vers la fiche du point de vente : <a class="link" href="/sellerFile{{$utilisateur->seller->id}}"><button class="btn btn-primary">Ici</button></a></p>                            
                         @endif
 
                     </div>
@@ -72,10 +72,9 @@
 
         @empty
 
-        <tr class="table-warning text-center"><td colspan="6">Aucun utilisateur enregistré</td></tr>
+            <tr class="table-warning text-center"><td colspan="6">Aucun utilisateur enregistré</td></tr>
             
-        @endforelse
-         
+        @endforelse 
           
         </tbody>
       </table> 

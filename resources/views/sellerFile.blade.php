@@ -75,7 +75,13 @@
     @foreach($comments as $comment)
 
         <li class="media my-3 py-2 border border-primary rounded w-auto">
-            <img class="flex-end ml-2" src="/storage/{{ $comment->user->avatar_path}}" width="100px" height="100px" alt="Photo de profil">
+            @if ($comment->user->avatar_path){
+                <img class="flex-end ml-2" src="/storage/{{ $comment->user->avatar_path}}" width="100px" height="100px" alt="Photo de profil">
+            }
+            @else
+                <img class="flex-end ml-2" src="" width="100px" height="100px" alt="Photo de profil absente">
+            @endif
+            
             <div class="media-body col-8 flex-start text-left">
                 <h4 class="my-0">{{$comment->title}}</h4>
                 <small class="text-muted mt-0"> envoyé par {{$comment->user->nickname}} le : {{$comment->created_at->format('d/m/Y à H:i:s')}}</small>
