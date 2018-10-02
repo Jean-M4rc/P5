@@ -24,7 +24,6 @@
                             <p class="text-dark">Message : {{ $comment->content }}</p>
                             <button type="submit" class="btn btn-primary">Modérer</button>
                         </fieldset>
-                        
                     </form>
                 </div>
                 <div>
