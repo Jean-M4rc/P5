@@ -75,8 +75,9 @@
     @foreach($comments as $comment)
 
         <li class="media my-3 py-2 border border-primary rounded w-auto">
-            @if ($comment->user->avatar_path)
+            @if ($comment->user->avatar_path){
                 <img class="flex-end ml-2" src="/storage/{{ $comment->user->avatar_path}}" width="100px" height="100px" alt="Photo de profil">
+            }
             @else
                 <img class="flex-end ml-2" src="" width="100px" height="100px" alt="Photo de profil absente">
             @endif

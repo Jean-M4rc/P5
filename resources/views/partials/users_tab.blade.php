@@ -42,12 +42,7 @@
                         <p class="text-primary">Nombre de commentaires postés : {{ count($utilisateur->comments) }}</p>
                         <div class="d-flex flex-column mb-3">
                             <p class="text-dark"> Image de profil :</p>
-                            @if ($utilisateur->avatar_path)
-                                <img class="mx-auto" src="/storage/{{ $utilisateur->avatar_path }}" width="200px" height="200px"/>
-                            @else
-                                Pas d'image définie.
-                            @endif
-                            
+                            <img class="mx-auto" src="/storage/{{ $utilisateur->avatar_path }}" width="200px" height="200px"/>
                         </div>
                         @if ($utilisateur->seller)
                         <p class="text-primary">Lien vers la fiche du point de vente : <a class="link" href="/sellerFile{{$utilisateur->seller->id}}"><button class="btn btn-primary">Ici</button></a></p>                            
@@ -57,15 +52,15 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
                         <form action="/banUser" method="post">
-                            @csrf
-                            <input type="hidden" name="userId" value="{{ $utilisateur->id }}">
-                            <button type="submit" class="btn btn-dark">
+                        @csrf
+                        <input type="hidden" name="userId" value="{{ $utilisateur->id }}">
+                        <button type="submit" class="btn btn-dark">
                             @if ($utilisateur->ban === 0)
                                 Bannir
                             @else
                                 Débannir
                             @endif
-                            </button>
+                        </button>
                         </form>
                         
                     </div>
