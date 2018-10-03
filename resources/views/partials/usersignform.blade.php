@@ -33,10 +33,10 @@
 
 </div>
 
-<div class="form-group"><!-- passwd -->
+<div id="passwordinput1" class="form-group"><!-- passwd -->
 
     <label for="InputPassword1">Mot de passe <span style="color:red">*</span></label>
-    <password-input1></password-input1>
+    <password-input></password-input>
 
     @if ($errors->has('password'))
         <p class="form-text text-danger"> {{ $errors->first('password') }}</p>

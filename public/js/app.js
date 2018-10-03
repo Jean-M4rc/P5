@@ -14012,12 +14012,20 @@ window.Vue = __webpack_require__(37);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('generalmapview', __webpack_require__(40));
+Vue.component('general-map-view', __webpack_require__(40));
 
-Vue.component('password-input1', __webpack_require__(45));
+Vue.component('password-input', __webpack_require__(45));
 
-var app = new Vue({
-  el: '#myapp'
+var mymap = new Vue({
+    el: '#mymap'
+});
+
+var passwordinput = new Vue({
+    el: '#passwordinput'
+});
+
+var passwordinput1 = new Vue({
+    el: '#passwordinput1'
 });
 
 /***/ }),

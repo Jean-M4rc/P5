@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('contenu')
-
-    <generalmapview></generalmapview>
-
+    <div id="mymap">
+        <general-map-view></general-map-view>
+    </div>
 @endsection

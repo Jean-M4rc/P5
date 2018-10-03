@@ -55,7 +55,7 @@
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                        <form method="post" action="/banUser" >
+                        <form method="post" action="/banUser">
                         @csrf
                         <input type="hidden" name="userId" value="{{ $utilisateur->id }}">
                         <button type="submit" class="btn btn-dark">
@@ -65,8 +65,7 @@
                                 Débannir
                             @endif
                         </button>
-                        </form>
-                        
+                        </form>  
                     </div>
                 </div>
             </div>

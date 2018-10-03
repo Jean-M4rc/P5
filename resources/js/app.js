@@ -15,10 +15,18 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('generalmapview', require('./components/GeneralMapView.vue'))
+Vue.component('general-map-view', require('./components/GeneralMapView.vue'))
 
-Vue.component('password-input1', require('./components/PasswordInput1.vue'));
+Vue.component('password-input', require('./components/PasswordInput1.vue'));
 
-const app = new Vue({
-    el: '#myapp'
+const mymap = new Vue({
+    el: '#mymap',
+});
+
+const passwordinput = new Vue({
+    el:'#passwordinput'
+});
+
+const passwordinput1 = new Vue({
+    el:'#passwordinput1'
 });
