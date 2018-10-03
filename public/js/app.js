@@ -61420,7 +61420,7 @@ var render = function() {
             expression: "show"
           }
         ],
-        staticClass: "col-12 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3",
+        staticClass: "col-12 col-sm-8 offset-sm-2 col-lg-6 offset-lg-3",
         staticStyle: { height: "90vh" },
         attrs: { id: "mapbox" }
       },
@@ -61569,7 +61569,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             show: false
-
         };
     }
 });

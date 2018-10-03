@@ -32,7 +32,7 @@
 
         <div v-show="show"><button @click="show = !show">Fermer la carte</button></div>
 
-        <div class="col-12 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3" id="mapbox" v-show="show" style="height:90vh">
+        <div class="col-12 col-sm-8 offset-sm-2 col-lg-6 offset-lg-3" id="mapbox" v-show="show" style="height:90vh">
             <l-map :zoom="zoom" :center="center">
                 <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
                 <l-marker :lat-lng="marker"></l-marker>

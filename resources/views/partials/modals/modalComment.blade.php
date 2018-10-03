@@ -28,10 +28,10 @@
                     </form>
                 </div>
                 <div>
-                    <form action="/deleteComment" method="POST"><button type="submit" class="btn btn-dark">Supprimer</button><input type="hidden" name="comment_id" value="{{$comment->id}}">
-                        @csrf
-                        
-                        
+                    <form action="/deleteComment" method="POST">
+                        @csrf       
+                        <button type="submit" class="btn btn-dark">Supprimer</button>
+                        <input type="hidden" name="comment_id" value="{{$comment->id}}">                        
                     </form>
                 </div>
             </div>
