@@ -21,8 +21,7 @@
                 <td class="align-middle d-none d-lg-table-cell">{{ $utilisateur->seller ? 'Vendeur' : 'Acheteur'}}</td>
                 <td class="align-middle d-none d-lg-table-cell">{{ $utilisateur->ban==1 ? 'Oui' : 'Non' }}</td>
                 <td class="align-middle"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalInfoUser{{ $utilisateur->id }}">Actions</button></td>
-                
-                    
+        
             </tr>
 
             <!-- modalInfoUser -->
@@ -42,16 +41,21 @@
                         <p class="text-primary">Nombre de commentaires postés : {{ count($utilisateur->comments) }}</p>
                         <div class="d-flex flex-column mb-3">
                             <p class="text-dark"> Image de profil :</p>
-                            <img class="mx-auto" src="/storage/{{ $utilisateur->avatar_path }}" width="200px" height="200px"/>
+                            @if ($utilisateur->avatar_path)
+                                <img class="mx-auto" src="/storage/{{ $utilisateur->avatar_path }}" width="200px" height="200px"/>
+                            @else
+                                Non défini.
+                            @endif                            
                         </div>
                         @if ($utilisateur->seller)
-                        <p class="text-primary">Lien vers la fiche du point de vente : <a class="link" href="/sellerFile{{$utilisateur->seller->id}}"><button class="btn btn-primary">Ici</button></a></p>                            
+                        <p class="text-primary align-middle">Lien vers la fiche du point de vente : <a class="link" href="/sellerFile{{$utilisateur->seller->id}}"><button class="btn btn-primary">Ici</button></a></p>
                         @endif
 
                     </div>
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                        <form action="/banUser" method="post">
+                        <form method="post" action="/banUser" >
                         @csrf
                         <input type="hidden" name="userId" value="{{ $utilisateur->id }}">
                         <button type="submit" class="btn btn-dark">
@@ -63,7 +67,6 @@
                         </button>
                         </form>
                         
-                    </div>
                     </div>
                 </div>
             </div>

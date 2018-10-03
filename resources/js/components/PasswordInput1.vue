@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="form-group">
     <div class="input-group">
         <input class="form-control" id="InputPassword1" name="password" placeholder="Mot de passe" :type="show ? 'text' : 'password'" required>
         <div class="input-group-append">

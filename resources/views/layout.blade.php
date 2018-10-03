@@ -25,7 +25,7 @@
     </head>
     <body >
 
-        <div id="app">
+        <div id="myapp">
 
             @include('partials\navbar')
 

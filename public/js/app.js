@@ -14017,7 +14017,7 @@ Vue.component('generalmapview', __webpack_require__(40));
 Vue.component('password-input1', __webpack_require__(45));
 
 var app = new Vue({
-  el: '#app'
+  el: '#myapp'
 });
 
 /***/ }),
@@ -61581,7 +61581,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticClass: "form-group" }, [
     _c("div", { staticClass: "input-group" }, [
       _c("input", {
         staticClass: "form-control",
