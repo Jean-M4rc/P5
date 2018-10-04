@@ -17,16 +17,6 @@ window.Vue = require('vue');
 
 Vue.component('general-map-view', require('./components/GeneralMapView.vue'))
 
-Vue.component('password-input', require('./components/PasswordInput1.vue'));
-
-const mymap = new Vue({
+const app = new Vue({
     el: '#mymap',
-});
-
-const passwordinput = new Vue({
-    el:'#passwordinput'
-});
-
-const passwordinput1 = new Vue({
-    el:'#passwordinput1'
 });

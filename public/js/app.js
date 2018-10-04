@@ -14014,18 +14014,8 @@ window.Vue = __webpack_require__(37);
 
 Vue.component('general-map-view', __webpack_require__(40));
 
-Vue.component('password-input', __webpack_require__(45));
-
-var mymap = new Vue({
-    el: '#mymap'
-});
-
-var passwordinput = new Vue({
-    el: '#passwordinput'
-});
-
-var passwordinput1 = new Vue({
-    el: '#passwordinput1'
+var app = new Vue({
+  el: '#mymap'
 });
 
 /***/ }),
@@ -47397,6 +47387,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -47413,11 +47410,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
         return {
             show: false,
-            zoom: 13,
-            center: L.latLng(47.413220, -1.219482),
+            zoom: 9,
+            center: L.latLng(49.182863, -0.370679),
             url: 'https://korona.geog.uni-heidelberg.de/tiles/roads/x={x}&y={y}&z={z}',
             attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-            marker: L.latLng(47.413220, -1.219482)
+            marker: L.latLng(49.070068, -0.404427)
         };
     }
 });
@@ -61428,8 +61425,8 @@ var render = function() {
             expression: "show"
           }
         ],
-        staticClass: "col-12 col-sm-8 offset-sm-2 col-lg-6 offset-lg-3",
-        staticStyle: { height: "90vh" },
+        staticClass: "col-12 col-lg-6 offset-lg-3",
+        staticStyle: { height: "85vh", width: "100vw" },
         attrs: { id: "mapbox" }
       },
       [
@@ -61474,8 +61471,7 @@ var staticRenderFns = [
       "div",
       {
         staticClass: "col-12 col-md-6 flex-column flex-center ",
-        staticStyle: { height: "150px" },
-        attrs: { id: "sellbtn1" }
+        staticStyle: { height: "150px" }
       },
       [
         _c(
@@ -61508,158 +61504,9 @@ if (false) {
 }
 
 /***/ }),
-/* 45 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(11)
-/* script */
-var __vue_script__ = __webpack_require__(46)
-/* template */
-var __vue_template__ = __webpack_require__(47)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/components/PasswordInput1.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-2f24324d", Component.options)
-  } else {
-    hotAPI.reload("data-v-2f24324d", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 46 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            show: false
-        };
-    }
-});
-
-/***/ }),
-/* 47 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "form-group" }, [
-    _c("div", { staticClass: "input-group" }, [
-      _c("input", {
-        staticClass: "form-control",
-        attrs: {
-          id: "InputPassword1",
-          name: "password",
-          placeholder: "Mot de passe",
-          type: _vm.show ? "text" : "password",
-          required: ""
-        }
-      }),
-      _vm._v(" "),
-      _c("div", { staticClass: "input-group-append" }, [
-        _c(
-          "button",
-          {
-            staticClass: "input-group-text btn",
-            attrs: { type: "button" },
-            on: {
-              click: function($event) {
-                _vm.show = !_vm.show
-              }
-            }
-          },
-          [
-            _c("i", {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: !_vm.show,
-                  expression: "!show"
-                }
-              ],
-              staticClass: "far fa-eye"
-            }),
-            _c("i", {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.show,
-                  expression: "show"
-                }
-              ],
-              staticClass: "far fa-eye-slash"
-            })
-          ]
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _c(
-      "small",
-      { staticClass: "form-text text-muted", attrs: { id: "passwordHelp" } },
-      [_vm._v("Minimum 6 caractères.")]
-    )
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-2f24324d", module.exports)
-  }
-}
-
-/***/ }),
+/* 45 */,
+/* 46 */,
+/* 47 */,
 /* 48 */
 /***/ (function(module, exports) {
 

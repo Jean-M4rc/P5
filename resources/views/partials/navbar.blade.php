@@ -80,10 +80,10 @@
                                     </div>                       
             
                                     <!-- le mot de passe -->
-                                    <div id="passwordinput" class="form-group">
+                                    <div class="form-group">
                                         <label class="control-label">Mot de passe : </label>
-
-                                        <password-input></password-input>
+                                        <input class="form-control" name="password" placeholder="Mot de passe" type="password" required>
+                                        <small id="passwordHelp" class="form-text text-muted">Minimum 6 caractères.</small>
             
                                         @if ($errors->has('password'))
                                             <p class="form-text text-danger"> {{ $errors->first('password') }}</p>

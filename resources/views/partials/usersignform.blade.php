@@ -33,10 +33,11 @@
 
 </div>
 
-<div id="passwordinput1" class="form-group"><!-- passwd -->
+<div class="form-group"><!-- passwd -->
 
-    <label for="InputPassword1">Mot de passe <span style="color:red">*</span></label>
-    <password-input></password-input>
+    <label for="InputPassword" class="control-label">Mot de passe <span style="color:red">*</span></label>
+    <input class="form-control" name="password" placeholder="Mot de passe" type="password" required>
+    <small id="passwordHelp" class="form-text text-muted">Minimum 6 caractères.</small>
 
     @if ($errors->has('password'))
         <p class="form-text text-danger"> {{ $errors->first('password') }}</p>
